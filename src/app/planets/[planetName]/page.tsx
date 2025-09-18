@@ -113,6 +113,53 @@ export default async function PlanetDetailsPage({ params }: { params: { planetNa
         </div>
       </div>
     );
+  } else if (planet.slug === 'earth') {
+    description = (
+      <div className="space-y-4">
+        <div>
+          <h3 className="font-bold text-xl mb-2">البنية</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>البنية: نواة داخلية صلبة، نواة خارجية سائلة، وشاح، قشرة</li>
+            <li>تبعد 150 مليون كيلومتر عن الشمس</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">المناخ والغلاف الجوي</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>78% نيتروجين، 21% أكسجين، 1% غازات أخرى</li>
+            <li>يحمي من الأشعة فوق البنفسجية وينظم الحرارة ويسمح بالحياة</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">السطح والزمن</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>71% مياه، 29% يابسة</li>
+            <li>تضاريس متنوعة وصفائح تكتونية نشطة</li>
+            <li>اليوم نحو 24 ساعة، السنة نحو 365.25 يومًا</li>
+            <li>ميل محوري 23.5° يسبب الفصول المناخية</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">القمر</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>له قمر واحد</li>
+            <li>الجاذبية سدس جاذبية الأرض</li>
+            <li>لا غلاف جوي فعّال وتباين حراري كبير</li>
+            <li>دوران متزامن فنرى دائمًا الوجه القريب</li>
+            <li>مسؤول عن المد والجزر</li>
+            <li>التكوين المرجّح: اصطدام عملاق</li>
+            <li>الاستكشاف: هبوط بشري ومشروعات للعودة</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">مميزات خاصة</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>الكوكب الوحيد المعروف بوجود حياة</li>
+            <li>مياه سائلة وغلاف ملائم</li>
+          </ul>
+        </div>
+      </div>
+    );
   } else {
     try {
       const result = await generatePlanetDescription({ planetName: planet.name });
@@ -143,7 +190,7 @@ export default async function PlanetDetailsPage({ params }: { params: { planetNa
           <div className="w-full lg:w-2/3">
             <Card className="bg-card/60 backdrop-blur-sm border-white/20 text-right">
               <CardHeader>
-                <CardTitle className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text" style={{backgroundImage: `url(${planet.slug === 'mars' ? 'https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fuser%2Ftmp-2-1724278453530?alt=media&token=18018247-fde0-47b2-bd74-325b5978a100' : placeholder.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+                <CardTitle className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text" style={{backgroundImage: `url(${placeholder.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
                   {planet.name}
                 </CardTitle>
               </CardHeader>
