@@ -2,50 +2,50 @@
   "placeholderImages": [
     {
       "id": "mercury",
-      "description": "A real image of the planet Mercury",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Fmercury.png?alt=media&token=a71c8b74-1250-4a8f-89f4-08f8a8b8492f",
+      "description": "A placeholder image for the planet Mercury",
+      "imageUrl": "https://picsum.photos/seed/mercury/500/500",
       "imageHint": "planet mercury"
     },
     {
       "id": "venus",
-      "description": "A real image of the planet Venus",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Fvenus.png?alt=media&token=1d74d257-2c9e-4c07-950c-03d2133f993e",
+      "description": "A placeholder image for the planet Venus",
+      "imageUrl": "https://picsum.photos/seed/venus/500/500",
       "imageHint": "planet venus"
     },
     {
       "id": "earth",
-      "description": "A real image of the planet Earth",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Fearth.png?alt=media&token=8e9b3fb0-3a52-473d-88b6-981840003c20",
+      "description": "A placeholder image for the planet Earth",
+      "imageUrl": "https://picsum.photos/seed/earth/500/500",
       "imageHint": "planet earth"
     },
     {
       "id": "mars",
-      "description": "A real image of the planet Mars",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Fmars.png?alt=media&token=7c8d9e2a-1b4e-4f11-828a-7b3f2b1d3d6e",
+      "description": "A placeholder image for the planet Mars",
+      "imageUrl": "https://picsum.photos/seed/mars/500/500",
       "imageHint": "planet mars"
     },
     {
       "id": "jupiter",
-      "description": "A real image of the planet Jupiter",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Fjupiter.png?alt=media&token=2d3d3b7e-9f1a-4d24-8d9e-1e4a3b7c2b3f",
+      "description": "A placeholder image for the planet Jupiter",
+      "imageUrl": "https://picsum.photos/seed/jupiter/500/500",
       "imageHint": "planet jupiter"
     },
     {
       "id": "saturn",
-      "description": "A real image of the planet Saturn",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Fsaturn.png?alt=media&token=5c8c6d3c-6e6b-4e1a-8c5e-3c2f1d4a9f8d",
+      "description": "A placeholder image for the planet Saturn",
+      "imageUrl": "https://picsum.photos/seed/saturn/500/500",
       "imageHint": "planet saturn"
     },
     {
       "id": "uranus",
-      "description": "A real image of the planet Uranus",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Furanus.png?alt=media&token=4f5d6f8a-9f5b-4b1a-9f8e-7e9b3a4d8c7b",
+      "description": "A placeholder image for the planet Uranus",
+      "imageUrl": "https://picsum.photos/seed/uranus/500/500",
       "imageHint": "planet uranus"
     },
     {
       "id": "neptune",
-      "description": "A real image of the planet Neptune",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Fneptune.png?alt=media&token=9c8e7b3a-6f9d-4e2b-9f1e-2d5a8c9b6d8a",
+      "description": "A placeholder image for the planet Neptune",
+      "imageUrl": "https://picsum.photos/seed/neptune/500/500",
       "imageHint": "planet neptune"
     }
   ]
