@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Planet } from '@/lib/planets-data';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { getPlaceholderImage } from '@/lib/placeholder-images';
 import { ArrowLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
