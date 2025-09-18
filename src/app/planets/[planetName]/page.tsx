@@ -16,7 +16,15 @@ export default async function PlanetDetailsPage({ params }: { params: { planetNa
     notFound();
   }
 
-  const { description } = await generatePlanetDescription({ planetName: planet.name });
+  let description: string;
+  try {
+    const result = await generatePlanetDescription({ planetName: planet.name });
+    description = result.description;
+  } catch (error) {
+    console.error("Failed to generate planet description:", error);
+    description = "عذرًا، لم نتمكن من تحميل وصف هذا الكوكب في الوقت الحالي. قد يكون النموذج مشغولاً. يرجى المحاولة مرة أخرى لاحقًا.";
+  }
+  
   const placeholder = getPlaceholderImage(planet.image.id);
 
   return (
