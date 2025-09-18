@@ -1,22 +1,69 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from 'next/link';
-import { quizData } from "@/lib/quiz-data";
+import { quizData, type QuizQuestion } from "@/lib/quiz-data";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, Home, RefreshCw } from "lucide-react";
 
+const TOTAL_QUESTIONS = 10;
+
+// Helper function to shuffle an array
+const shuffleArray = (array: any[]) => {
+    let currentIndex = array.length, randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex !== 0) {
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+}
+
 export function QuizGame() {
+    const [questions, setQuestions] = useState<QuizQuestion[]>([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
     const [isAnswered, setIsAnswered] = useState(false);
     const [isFinished, setIsFinished] = useState(false);
 
-    const currentQuestion = quizData[currentQuestionIndex];
+    useEffect(() => {
+        startNewGame();
+    }, []);
+    
+    const startNewGame = () => {
+        const shuffledQuestions = shuffleArray([...quizData]).slice(0, TOTAL_QUESTIONS);
+        setQuestions(shuffledQuestions);
+        setCurrentQuestionIndex(0);
+        setScore(0);
+        setSelectedOption(null);
+        setIsAnswered(false);
+        setIsFinished(false);
+    };
+
+    if (questions.length === 0) {
+        return (
+            <Card className="w-full max-w-xl bg-card/70 backdrop-blur-sm border-white/20 text-right">
+                <CardHeader>
+                    <CardTitle className="text-2xl font-semibold text-white pt-6 text-center">
+                        جاري تحميل الأسئلة...
+                    </CardTitle>
+                </CardHeader>
+            </Card>
+        );
+    }
+    
+    const currentQuestion = questions[currentQuestionIndex];
 
     const handleOptionSelect = (option: string) => {
         if (isAnswered) return;
@@ -30,21 +77,13 @@ export function QuizGame() {
     };
 
     const handleNextQuestion = () => {
-        if (currentQuestionIndex < quizData.length - 1) {
+        if (currentQuestionIndex < questions.length - 1) {
             setCurrentQuestionIndex(prev => prev + 1);
             setSelectedOption(null);
             setIsAnswered(false);
         } else {
             setIsFinished(true);
         }
-    };
-    
-    const handleRestart = () => {
-        setCurrentQuestionIndex(0);
-        setScore(0);
-        setSelectedOption(null);
-        setIsAnswered(false);
-        setIsFinished(false);
     };
 
     if (isFinished) {
@@ -57,10 +96,10 @@ export function QuizGame() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="text-center">
-                    <p className="text-6xl font-bold text-white mb-4">{score} / {quizData.length}</p>
+                    <p className="text-6xl font-bold text-white mb-4">{score} / {questions.length}</p>
                 </CardContent>
                 <CardFooter className="flex flex-col sm:flex-row gap-4">
-                    <Button onClick={handleRestart} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                    <Button onClick={startNewGame} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                         <RefreshCw className="ml-2 h-4 w-4" />
                         إعادة الاختبار
                     </Button>
@@ -78,7 +117,7 @@ export function QuizGame() {
     return (
         <Card className="w-full max-w-xl bg-card/70 backdrop-blur-sm border-white/20 text-right">
             <CardHeader>
-                <Progress value={((currentQuestionIndex + 1) / quizData.length) * 100} className="w-full h-2 bg-primary" indicatorClassName="bg-accent" />
+                <Progress value={((currentQuestionIndex + 1) / questions.length) * 100} className="w-full h-2 bg-primary" indicatorClassName="bg-accent" />
                 <CardTitle className="text-2xl font-semibold text-white pt-6">
                     {currentQuestion.question}
                 </CardTitle>
@@ -117,7 +156,7 @@ export function QuizGame() {
                             {selectedOption === currentQuestion.correct ? "✅ إجابة صحيحة!" : `❌ إجابة خاطئة. الإجابة الصحيحة هي: ${currentQuestion.correct}`}
                         </p>
                         <Button onClick={handleNextQuestion} className="w-full mt-4 bg-accent text-accent-foreground hover:bg-accent/90">
-                            {currentQuestionIndex < quizData.length - 1 ? 'السؤال التالي' : 'عرض النتيجة'}
+                            {currentQuestionIndex < questions.length - 1 ? 'السؤال التالي' : 'عرض النتيجة'}
                             <ArrowLeft className="mr-2 h-4 w-4" />
                         </Button>
                     </div>
