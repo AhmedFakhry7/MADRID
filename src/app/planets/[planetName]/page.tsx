@@ -219,6 +219,88 @@ export default async function PlanetDetailsPage({ params }: { params: { planetNa
         </div>
       </div>
     );
+  } else if (planet.slug === 'saturn') {
+    description = (
+      <div className="space-y-4">
+        <div>
+          <h3 className="font-bold text-xl mb-2">القياسات والتركيب</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>ثاني أكبر الكواكب</li>
+            <li>كوكب غازي بلا سطح صلب</li>
+            <li>يتكون بشكل اساسي من الهيدروجين</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">الحلقات والأقمار</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>حلقات ضخمة رقيقة السماكة وتمتد مئات آلاف الكيلومترات</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">أبرز الاقمار</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>عددها 140 قمر</li>
+            <li>تيتان: غلاف كثيف وبحيرات من الميثان وهو اكبر اقمار زحل</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">خصائص إضافية</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>كثافة أقل من الماء</li>
+            <li>اليوم نحو 10 ساعات ونصف، السنة نحو 29.5 سنة</li>
+            <li>مجال مغناطيسي قوي وشفق قطبي</li>
+          </ul>
+        </div>
+      </div>
+    );
+  } else if (planet.slug === 'uranus') {
+    description = (
+      <div className="space-y-4">
+        <div>
+          <h3 className="font-bold text-xl mb-2">الموقع والخصائص</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>الكوكب السابع</li>
+            <li>عملاق جليدي من ماء وأمونيا وميثان</li>
+            <li>ميل محوري يقارب 98 درجة فيدور كأنه على جانبه</li>
+            <li>اليوم نحو 17 ساعة و14 دقيقة، السنة نحو 84 سنة</li>
+            <li>غلبة اللون الازرق بسبب وجود غاز الميثان</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">الحلقات</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>ليست كثيرة كحلقات زحل وعددها حوالي 13 حلقة</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">الاقمار</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>عددها 13 قمر</li>
+          </ul>
+        </div>
+      </div>
+    );
+  } else if (planet.slug === 'neptune') {
+    description = (
+      <div className="space-y-4">
+        <div>
+          <h3 className="font-bold text-xl mb-2">القياسات والتركيب والطقس</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>عملاق جليدي بلون أزرق بسبب الميثان</li>
+            <li>أسرع رياح كوكبية تتجاوز 2,100 كم/ساعة</li>
+            <li>اليوم نحو 16 ساعة، السنة نحو 165 سنة</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">الظواهر والحلقات والأقمار</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>البقعة المظلمة العظيمة: عاصفة رُصدت في أواخر القرن العشرين</li>
+            <li>حلقات ضعيفة</li>
+            <li>عدد اقماره 14 قمر</li>
+          </ul>
+        </div>
+      </div>
+    );
   } else {
     try {
       const result = await generatePlanetDescription({ planetName: planet.name });
