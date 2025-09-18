@@ -68,6 +68,51 @@ export default async function PlanetDetailsPage({ params }: { params: { planetNa
         </div>
       </div>
     );
+  } else if (planet.slug === 'venus') {
+    description = (
+      <div className="space-y-4">
+        <div>
+          <h3 className="font-bold text-xl mb-2">التعريف والقياسات</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>ثاني كوكب، وتوأم الأرض في الحجم والكتلة تقريبًا</li>
+            <li>ألمع كوكب يرى كنجمة الصبح أو المساء</li>
+            <li>الجاذبية 0.9 من جاذبية الأرض</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">المدار والدوران</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>السنة 225 يومًا</li>
+            <li>اليوم 243 يومًا، وهو أطول من سنته</li>
+            <li>يدور من الشرق إلى الغرب (عكس اتجاه باقي الكواكب)</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">السطح والغلاف الجوي والحرارة</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>سحب كثيفة من ثاني أكسيد الكربون وحمض الكبريتيك</li>
+            <li>غلاف جوي أكثف من الأرض بنحو 90 مرة</li>
+            <li>التركيب: 96% ثاني أكسيد الكربون، 3% نيتروجين</li>
+            <li>حرارة سطح شبه ثابتة نحو 465 درجة</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">ظواهر، أقمار، استكشاف</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>رياح علوية تجوب الكوكب في نحو 4 أيام</li>
+            <li>أمطار حمضية تتبخر قبل الوصول للسطح</li>
+            <li>بلا أقمار</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">لقطات مدهشة</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>تشرق الشمس من الغرب وتغرب من الشرق</li>
+            <li>ضغط يعادل عمق 900 متر تحت الماء على الأرض</li>
+          </ul>
+        </div>
+      </div>
+    );
   } else {
     try {
       const result = await generatePlanetDescription({ planetName: planet.name });
