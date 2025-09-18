@@ -31,8 +31,8 @@ export function Header() {
                     <Button asChild variant="outline" className="text-white border-white/30 hover:bg-white/10 hover:text-white text-sm">
                         <Link href="/login">تسجيل دخول</Link>
                     </Button>
-                    <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm">
-                        تسجيل
+                    <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm">
+                        <Link href="/signup">تسجيل</Link>
                     </Button>
                 </div>
             </nav>
