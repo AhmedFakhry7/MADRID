@@ -6,13 +6,23 @@ export default function PlanetsPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1 container mx-auto px-4 py-8">
-        <h1 className="text-3xl md:text-5xl font-bold text-center mb-12" style={{ color: 'hsl(var(--accent))' }}>
-          استكشف كواكب المجموعة الشمسية
-        </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {planets.map((planet) => (
-            <PlanetCard key={planet.slug} planet={planet} />
+      <main className="flex-1 container mx-auto px-4 py-12">
+        <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-300 to-purple-400 bg-clip-text text-transparent mb-4">
+              كواكب المجموعة الشمسية
+            </h1>
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+              انطلق في رحلة لاستكشاف عوالم مجموعتنا الشمسية، من الكواكب الصخرية القريبة إلى عمالقة الغاز البعيدة.
+            </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12">
+          {planets.map((planet, index) => (
+            <PlanetCard 
+              key={planet.slug} 
+              planet={planet}
+              style={{ animationDelay: `${index * 100}ms` }}
+              className="fade-in-up"
+            />
           ))}
         </div>
       </main>
