@@ -10,7 +10,7 @@ const SpaceLogo = () => (
 
 export function Header() {
     return (
-        <header className="relative z-10">
+        <header className="relative z-50">
             <nav className="flex items-center justify-between px-4 md:px-8 py-4 bg-black/20 backdrop-blur-sm border-b border-white/10">
                 <Link href="/" className="flex items-center gap-2" aria-label="Homepage">
                     <SpaceLogo />
