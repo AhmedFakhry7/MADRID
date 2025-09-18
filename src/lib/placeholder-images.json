@@ -1,3 +1,52 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "mercury",
+      "description": "An image of the planet Mercury",
+      "imageUrl": "https://picsum.photos/seed/mercury/500/500",
+      "imageHint": "planet mercury"
+    },
+    {
+      "id": "venus",
+      "description": "An image of the planet Venus",
+      "imageUrl": "https://picsum.photos/seed/venus/500/500",
+      "imageHint": "planet venus"
+    },
+    {
+      "id": "earth",
+      "description": "An image of the planet Earth",
+      "imageUrl": "https://picsum.photos/seed/earth/500/500",
+      "imageHint": "planet earth"
+    },
+    {
+      "id": "mars",
+      "description": "An image of the planet Mars",
+      "imageUrl": "https://picsum.photos/seed/mars/500/500",
+      "imageHint": "planet mars"
+    },
+    {
+      "id": "jupiter",
+      "description": "An image of the planet Jupiter",
+      "imageUrl": "https://picsum.photos/seed/jupiter/500/500",
+      "imageHint": "planet jupiter"
+    },
+    {
+      "id": "saturn",
+      "description": "An image of the planet Saturn",
+      "imageUrl": "https://picsum.photos/seed/saturn/500/500",
+      "imageHint": "planet saturn"
+    },
+    {
+      "id": "uranus",
+      "description": "An image of the planet Uranus",
+      "imageUrl": "https://picsum.photos/seed/uranus/500/500",
+      "imageHint": "planet uranus"
+    },
+    {
+      "id": "neptune",
+      "description": "An image of the planet Neptune",
+      "imageUrl": "https://picsum.photos/seed/neptune/500/500",
+      "imageHint": "planet neptune"
+    }
+  ]
 }
