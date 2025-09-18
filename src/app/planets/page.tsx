@@ -20,8 +20,8 @@ export default function PlanetsPage() {
             <PlanetCard 
               key={planet.slug} 
               planet={planet}
-              style={{ animationDelay: `${index * 100}ms` }}
               className="fade-in-up"
+              style={{ animationDelay: `${index * 100}ms` }}
             />
           ))}
         </div>
