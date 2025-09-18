@@ -2,50 +2,50 @@
   "placeholderImages": [
     {
       "id": "mercury",
-      "description": "An image of the planet Mercury",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fuser%2Fmercury.jpg?alt=media&token=2eb2f671-155e-44e2-b13c-d383921356f1",
+      "description": "A real image of the planet Mercury",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Fmercury.png?alt=media&token=a71c8b74-1250-4a8f-89f4-08f8a8b8492f",
       "imageHint": "planet mercury"
     },
     {
       "id": "venus",
-      "description": "An image of the planet Venus",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fuser%2Fvenus.jpg?alt=media&token=0b6e927c-3f41-4775-8ea5-0d7003058866",
+      "description": "A real image of the planet Venus",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Fvenus.png?alt=media&token=1d74d257-2c9e-4c07-950c-03d2133f993e",
       "imageHint": "planet venus"
     },
     {
       "id": "earth",
-      "description": "An image of the planet Earth",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fuser%2Fearth.jpg?alt=media&token=92461b17-7676-47b1-9131-039c36214150",
+      "description": "A real image of the planet Earth",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Fearth.png?alt=media&token=8e9b3fb0-3a52-473d-88b6-981840003c20",
       "imageHint": "planet earth"
     },
     {
       "id": "mars",
-      "description": "An image of the planet Mars",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fuser%2Fmars.jpg?alt=media&token=0c2d3a3d-3b7c-4a37-8898-59c40212f7a9",
+      "description": "A real image of the planet Mars",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Fmars.png?alt=media&token=7c8d9e2a-1b4e-4f11-828a-7b3f2b1d3d6e",
       "imageHint": "planet mars"
     },
     {
       "id": "jupiter",
-      "description": "An image of the planet Jupiter",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fuser%2Fjupiter.jpg?alt=media&token=a8a2d1f1-0a6e-4734-9343-239eb858c21a",
+      "description": "A real image of the planet Jupiter",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Fjupiter.png?alt=media&token=2d3d3b7e-9f1a-4d24-8d9e-1e4a3b7c2b3f",
       "imageHint": "planet jupiter"
     },
     {
       "id": "saturn",
-      "description": "An image of the planet Saturn",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fuser%2Fsaturn.jpg?alt=media&token=8d27038e-0a1a-4d7a-8f8d-4e942a49852f",
+      "description": "A real image of the planet Saturn",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Fsaturn.png?alt=media&token=5c8c6d3c-6e6b-4e1a-8c5e-3c2f1d4a9f8d",
       "imageHint": "planet saturn"
     },
     {
       "id": "uranus",
-      "description": "An image of the planet Uranus",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fuser%2Furanus.jpg?alt=media&token=7c77226f-9988-4c8d-8a2a-7140f7b0254c",
+      "description": "A real image of the planet Uranus",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Furanus.png?alt=media&token=4f5d6f8a-9f5b-4b1a-9f8e-7e9b3a4d8c7b",
       "imageHint": "planet uranus"
     },
     {
       "id": "neptune",
-      "description": "An image of the planet Neptune",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fuser%2Fneptune.jpg?alt=media&token=0f7d54c1-4b13-4e4f-b3a1-7925c404618e",
+      "description": "A real image of the planet Neptune",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-hosting-test-2f589.appspot.com/o/images%2Fplanets%2Fneptune.png?alt=media&token=9c8e7b3a-6f9d-4e2b-9f1e-2d5a8c9b6d8a",
       "imageHint": "planet neptune"
     }
   ]

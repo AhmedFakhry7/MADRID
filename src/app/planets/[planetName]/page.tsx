@@ -275,7 +275,7 @@ export default async function PlanetDetailsPage({ params }: { params: { planetNa
         <div>
           <h3 className="font-bold text-xl mb-2">الاقمار</h3>
           <ul className="list-disc list-inside space-y-1">
-            <li>عددها 13 قمر</li>
+            <li>عددها 27 قمر</li>
           </ul>
         </div>
       </div>
@@ -331,7 +331,7 @@ export default async function PlanetDetailsPage({ params }: { params: { planetNa
           <div className="w-full lg:w-2/3">
             <Card className="bg-card/60 backdrop-blur-sm border-white/20 text-right">
               <CardHeader>
-                <CardTitle className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text" style={{backgroundImage: `url(${placeholder.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+                <CardTitle className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text" style={{backgroundImage: `url(${placeholder.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(1.5)'}}>
                   {planet.name}
                 </CardTitle>
               </CardHeader>
