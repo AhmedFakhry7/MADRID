@@ -17,12 +17,39 @@ export default async function PlanetDetailsPage({ params }: { params: { planetNa
   }
 
   let description: string;
-  try {
-    const result = await generatePlanetDescription({ planetName: planet.name });
-    description = result.description;
-  } catch (error) {
-    console.error("Failed to generate planet description:", error);
-    description = "عذرًا، لم نتمكن من تحميل وصف هذا الكوكب في الوقت الحالي. قد يكون النموذج مشغولاً. يرجى المحاولة مرة أخرى لاحقًا.";
+  if (planet.slug === 'mercury') {
+    description = `
+عطارد
+التعريف والقياسات
+أقرب كوكب للشمس وأصغر الكواكب
+الجاذبية 0.38 من جاذبية الأرض
+المدار والدوران
+السنة 88 يومًا
+اليوم المحوري 59 يومًا
+اليوم الشمسي نحو 176 يومًا
+السطح والبيئة
+سطح مليء بالفوهات كالقمر
+لا غلاف جوي فعّال، ولا براكين نشطة حاليًا
+وجود جليد في فوهات الأقطاب العميقة
+الغلاف الجوي والحرارة
+له غلاف ضعيف
+النهار يصل إلى حوالي +430 درجة
+الليل ينخفض إلى نحو −180 درجة
+الأقمار
+بلا أقمار
+لقطات مدهشة
+تبدو الشمس أكبر ثلاث مرات مما نراها من الأرض
+تبقى الآثار السطحية ملايين السنين
+قد تظهر الشمس وتغرب وتشرق ثانية عند الفجر بسبب الحركة الخاصة
+`;
+  } else {
+    try {
+      const result = await generatePlanetDescription({ planetName: planet.name });
+      description = result.description;
+    } catch (error) {
+      console.error("Failed to generate planet description:", error);
+      description = "عذرًا، لم نتمكن من تحميل وصف هذا الكوكب في الوقت الحالي. قد يكون النموذج مشغولاً. يرجى المحاولة مرة أخرى لاحقًا.";
+    }
   }
   
   const placeholder = getPlaceholderImage(planet.image.id);
