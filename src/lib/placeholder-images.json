@@ -21,7 +21,7 @@
     {
       "id": "mars",
       "description": "An image of the planet Mars",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/app-proy-1394.appspot.com/o/placeholders%2FA_stunning_digital_painting_of_Mars__the_Red_Planet.png?alt=media&token=2523d83b-3c32-429a-8353-a5a41569424d",
+      "imageUrl": "https://picsum.photos/seed/mars/500/500",
       "imageHint": "planet mars"
     },
     {
