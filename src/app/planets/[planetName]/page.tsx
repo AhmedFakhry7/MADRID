@@ -45,7 +45,9 @@ export default async function PlanetDetailsPage({ params }: { params: { planetNa
           <div className="w-full lg:w-2/3">
             <Card className="bg-card/60 backdrop-blur-sm border-white/20 text-right">
               <CardHeader>
-                <CardTitle className="text-4xl md:text-5xl font-bold text-accent">{planet.name}</CardTitle>
+                <CardTitle className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text" style={{backgroundImage: `url(${placeholder.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+                  {planet.name}
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-lg md:text-xl leading-relaxed text-gray-200 whitespace-pre-wrap">
