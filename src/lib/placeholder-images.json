@@ -2,50 +2,50 @@
   "placeholderImages": [
     {
       "id": "mercury",
-      "description": "A placeholder image for the planet Mercury",
-      "imageUrl": "https://picsum.photos/seed/mercury/500/500",
+      "description": "A real image of the planet Mercury",
+      "imageUrl": "https://images.unsplash.com/photo-1614313913009-34471b7c7247?q=80&w=500&h=500&fit=crop",
       "imageHint": "planet mercury"
     },
     {
       "id": "venus",
-      "description": "A placeholder image for the planet Venus",
-      "imageUrl": "https://picsum.photos/seed/venus/500/500",
+      "description": "A real image of the planet Venus",
+      "imageUrl": "https://images.unsplash.com/photo-1614313913009-34471b7c7247?q=80&w=500&h=500&fit=crop",
       "imageHint": "planet venus"
     },
     {
       "id": "earth",
-      "description": "A placeholder image for the planet Earth",
-      "imageUrl": "https://picsum.photos/seed/earth/500/500",
+      "description": "A real image of the planet Earth",
+      "imageUrl": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=500&h=500&fit=crop",
       "imageHint": "planet earth"
     },
     {
       "id": "mars",
-      "description": "A placeholder image for the planet Mars",
-      "imageUrl": "https://picsum.photos/seed/mars/500/500",
+      "description": "A real image of the planet Mars",
+      "imageUrl": "https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=500&h=500&fit=crop",
       "imageHint": "planet mars"
     },
     {
       "id": "jupiter",
-      "description": "A placeholder image for the planet Jupiter",
-      "imageUrl": "https://picsum.photos/seed/jupiter/500/500",
+      "description": "A real image of the planet Jupiter",
+      "imageUrl": "https://images.unsplash.com/photo-1614732414454-3479a56903cb?q=80&w=500&h=500&fit=crop",
       "imageHint": "planet jupiter"
     },
     {
       "id": "saturn",
-      "description": "A placeholder image for the planet Saturn",
-      "imageUrl": "https://picsum.photos/seed/saturn/500/500",
+      "description": "A real image of the planet Saturn",
+      "imageUrl": "https://images.unsplash.com/photo-1614729939124-0373433c4343?q=80&w=500&h=500&fit=crop",
       "imageHint": "planet saturn"
     },
     {
       "id": "uranus",
-      "description": "A placeholder image for the planet Uranus",
-      "imageUrl": "https://picsum.photos/seed/uranus/500/500",
+      "description": "A real image of the planet Uranus",
+      "imageUrl": "https://images.unsplash.com/photo-1614728836798-2a4d46d035a9?q=80&w=500&h=500&fit=crop",
       "imageHint": "planet uranus"
     },
     {
       "id": "neptune",
-      "description": "A placeholder image for the planet Neptune",
-      "imageUrl": "https://picsum.photos/seed/neptune/500/500",
+      "description": "A real image of the planet Neptune",
+      "imageUrl": "https://images.unsplash.com/photo-1614732413344-9634b16d15b2?q=80&w=500&h=500&fit=crop",
       "imageHint": "planet neptune"
     }
   ]
