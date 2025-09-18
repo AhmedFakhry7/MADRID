@@ -28,8 +28,8 @@ export function Header() {
                     </Button>
                 </div>
                 <div className="flex items-center gap-2 md:gap-4">
-                    <Button variant="outline" className="text-white border-white/30 hover:bg-white/10 hover:text-white text-sm">
-                        تسجيل دخول
+                    <Button asChild variant="outline" className="text-white border-white/30 hover:bg-white/10 hover:text-white text-sm">
+                        <Link href="/login">تسجيل دخول</Link>
                     </Button>
                     <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm">
                         تسجيل
