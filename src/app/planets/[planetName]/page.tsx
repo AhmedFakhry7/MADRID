@@ -160,6 +160,65 @@ export default async function PlanetDetailsPage({ params }: { params: { planetNa
         </div>
       </div>
     );
+  } else if (planet.slug === 'mars') {
+    description = (
+      <div className="space-y-4">
+        <div>
+          <h3 className="font-bold text-xl mb-2">الغلاف الجوي والحرارة</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>رقيق: 95% ثاني أكسيد الكربون، 3% نيتروجين، 1.6% أرجون</li>
+            <li>متوسط الحرارة نحو −63 درجة</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">السطح والزمن</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>اللون الأحمر بسبب أكسيد الحديد</li>
+            <li>أكبر بركان: أوليمبوس مونز (ثلاث اضعاف جبل ايفريست)</li>
+            <li>اليوم نحو 24 ساعة و39 دقيقة، والسنة نحو 687 يومًا</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">الأقمار والطقس والاستكشاف</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>قمران صغيران: فوبوس وديموس</li>
+            <li>فوبوس: قطر نحو 22 كم، مدار قريب جدًا، يتجه للتفكك أو السقوط مستقبلًا</li>
+            <li>ديموس: قطر نحو 12 كم، مدار أبعد ويتباعد مع الزمن</li>
+            <li>عواصف ترابية كوكبية وأقطاب جليدية من ماء وثاني أكسيد الكربون</li>
+            <li>مركبات جوالة وبحوث عن آثار حياة قديمة وإمكان السكن مستقبلًا</li>
+          </ul>
+        </div>
+      </div>
+    );
+  } else if (planet.slug === 'jupiter') {
+    description = (
+      <div className="space-y-4">
+        <div>
+          <h3 className="font-bold text-xl mb-2">القياسات والتركيب والطقس</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>أكبر كواكب المجموعة</li>
+            <li>غالبًا هيدروجين وهيليوم وبلا سطح صلب</li>
+            <li>غيوم ملوّنة وعواصف مستمرة</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">البقعة الحمراء العظيمة</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>عاصفة عملاقة نصف قطرها اكبر من نصف قطرالأرض</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">الحلقات والأقمار والمغناطيسية</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>حلقات رفيعة </li>
+            <li>أقوى مجال مغناطيسي كوكبي</li>
+            <li>يوم قصير نحو 10 ساعات، سنة نحو 12 سنة</li>
+            <li>عدد الاقمار 95 قمر وابرزها</li>
+            <li>جانيميد: أكبر الأقمار وله مجال مغناطيسي</li>
+          </ul>
+        </div>
+      </div>
+    );
   } else {
     try {
       const result = await generatePlanetDescription({ planetName: planet.name });
