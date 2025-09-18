@@ -2,9 +2,16 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const SpaceLogo = () => (
-    <svg className="w-10 h-10 text-accent" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" />
-        <circle cx="12" cy="12" r="3" fill="none" stroke="hsl(var(--accent))" strokeWidth="1" />
+    <svg className="w-10 h-10 text-accent" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g>
+            <path d="M62.5 12.5C62.5 10.29 60.71 8.5 58.5 8.5H41.5C39.29 8.5 37.5 10.29 37.5 12.5V37.5H62.5V12.5Z" fill="#E0E0E0"/>
+            <path d="M50 4.16669C54.6024 4.16669 58.3333 7.89762 58.3333 12.5V37.5H41.6667V12.5C41.6667 7.89762 45.3976 4.16669 50 4.16669Z" fill="hsl(var(--accent))"/>
+            <path d="M37.5 37.5H62.5V75H37.5V37.5Z" fill="#F0F0F0"/>
+            <circle cx="50" cy="54.1667" r="10" fill="hsl(var(--accent) / 0.5)" stroke="hsl(var(--accent))" strokeWidth="2"/>
+            <path d="M37.5 75L25 95.8333H75L62.5 75H37.5Z" fill="hsl(var(--accent))"/>
+            <path d="M33.3333 95.8333H41.6667V83.3333H33.3333V95.8333Z" fill="#FFC107"/>
+            <path d="M58.3333 95.8333H66.6667V83.3333H58.3333V95.8333Z" fill="#FFC107"/>
+        </g>
     </svg>
 );
 
