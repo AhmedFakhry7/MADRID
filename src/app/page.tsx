@@ -25,7 +25,7 @@ export default function Home() {
             </Button>
 
             <Button asChild variant="outline" size="lg" className="px-8 py-4 bg-transparent border-2 border-white/30 text-white text-lg font-semibold rounded-xl hover:bg-white/10 transition-all">
-                <Link href="/planets">
+                <Link href="/planets" className="flex items-center gap-2">
                 📖 استكشف الكواكب
                 </Link>
             </Button>
