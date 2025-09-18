@@ -27,13 +27,11 @@ export function PlanetCard({ planet, className, style }: PlanetCardProps) {
             className="object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
             data-ai-hint={planet.image.hint}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6 text-right">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-2">{planet.name}</h2>
-              <div className="flex items-center justify-end text-accent group-hover:-translate-x-1 transition-transform duration-300">
-                <span className="text-sm font-semibold">استكشف الآن</span>
-                <ArrowLeft className="h-4 w-4 ml-1 transform " />
-              </div>
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+            <h2 className="text-xl font-bold text-white mb-2 text-right">{planet.name}</h2>
+            <div className="flex items-center justify-end text-accent group-hover:text-accent/80 transition-colors">
+              <span className="text-sm font-semibold">استكشف الآن</span>
+              <ArrowLeft className="h-4 w-4 mr-1" />
             </div>
           </div>
         </Card>
