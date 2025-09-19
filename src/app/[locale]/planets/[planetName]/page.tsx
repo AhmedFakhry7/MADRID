@@ -5,7 +5,7 @@ import { Header } from '@/components/layout/header';
 import { planets } from '@/lib/planets-data';
 import { generatePlanetDescription } from '@/ai/flows/generate-planet-description';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Youtube } from 'lucide-react';
 import { getPlaceholderImage } from '@/lib/placeholder-images';
 import {
   Card,
@@ -1045,7 +1045,7 @@ export default async function PlanetDetailsPage({
                 <div className="text-lg md:text-xl leading-relaxed text-gray-200">
                   {description}
                 </div>
-                <div className="mt-8">
+                <div className="mt-8 flex flex-wrap gap-4">
                   <Button
                     asChild
                     variant="outline"
@@ -1057,6 +1057,18 @@ export default async function PlanetDetailsPage({
                       <ArrowLeft className="h-4 w-4 ltr:hidden" />
                     </Link>
                   </Button>
+                  {planet.slug === 'mercury' && (
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="text-white border-white/30 hover:bg-white/10 hover:text-white bg-red-600/50 hover:bg-red-600/70 border-red-500/50"
+                    >
+                      <a href="https://youtu.be/0KBjnNuhRHs?si=EuSqLYUeZihhI02n" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <Youtube className="h-5 w-5" />
+                        {params.locale === 'ar' ? 'شاهد فيديو' : 'Watch Video'}
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
