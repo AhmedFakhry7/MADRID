@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next-intl/link';
+import { Link } from '@/navigation';
 import { useTranslations } from 'next-intl';
 import { Header } from '@/components/layout/header';
 import { Astronaut } from '@/components/astronaut';

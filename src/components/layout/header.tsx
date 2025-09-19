@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next-intl/link';
+import { Link } from '@/navigation';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/language-switcher';
@@ -24,13 +24,19 @@ const SpaceLogo = () => (
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <path
-        d="M152.09 110.42C155.3 107.48 156.4 103.13 155.15 99.04C153.9 94.95 150.46 91.83 146.22 90.53C139.38 88.45 131.7 91.1 127.35 96.63L99.9999 129.99L72.6499 96.63C68.2999 91.1 60.6199 88.45 53.7799 90.53C49.5399 91.83 46.0999 94.95 44.8499 99.04C43.5999 103.13 44.6999 107.48 47.9099 110.42L84.2799 142.27C88.4499 146 94.0299 148.11 99.9999 148.11C105.97 148.11 111.55 146 115.72 142.27L152.09 110.42Z"
-        stroke="white"
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <g transform="translate(25, 25) scale(0.75)">
+        <path d="M100 20C111.046 20 120 28.9543 120 40V60C120 71.0457 111.046 80 100 80C88.9543 80 80 71.0457 80 60V40C80 28.9543 88.9543 20 100 20Z" fill="#E5E7EB" stroke="#9CA3AF" strokeWidth="4"/>
+        <rect x="70" y="70" width="60" height="80" rx="15" fill="#F3F4F6" stroke="#9CA3AF" strokeWidth="4"/>
+        <rect x="80" y="90" width="40" height="50" rx="5" fill="hsla(var(--accent)/0.3)" stroke="hsl(var(--accent))" strokeWidth="2.5"/>
+        <path d="M100 150L100 170" stroke="#9CA3AF" strokeWidth="4" strokeLinecap="round"/>
+        <path d="M90 170H110" stroke="#9CA3AF" strokeWidth="4" strokeLinecap="round"/>
+        <path d="M60 100L70 100" stroke="#9CA3AF" strokeWidth="4" strokeLinecap="round"/>
+        <path d="M130 100L140 100" stroke="#9CA3AF" strokeWidth="4" strokeLinecap="round"/>
+        <path d="M70 120L60 130" stroke="#9CA3AF" strokeWidth="4" strokeLinecap="round"/>
+        <path d="M130 120L140 130" stroke="#9CA3AF" strokeWidth="4" strokeLinecap="round"/>
+        <circle cx="92" cy="105" r="3" fill="white" />
+        <circle cx="108" cy="105" r="3" fill="white" />
+      </g>
     </g>
     <defs>
       <clipPath id="clip0_80_2">
@@ -39,6 +45,7 @@ const SpaceLogo = () => (
     </defs>
   </svg>
 );
+
 
 export function Header() {
   const t = useTranslations('Header');

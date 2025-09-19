@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next-intl/link';
+import { Link } from '@/navigation';
 import Image from 'next/image';
 import type { Planet } from '@/lib/planets-data';
 import { Card } from '@/components/ui/card';

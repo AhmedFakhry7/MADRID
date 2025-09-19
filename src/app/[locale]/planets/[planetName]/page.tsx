@@ -1,4 +1,4 @@
-import Link from 'next-intl/link';
+import { Link } from '@/navigation';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/layout/header';
