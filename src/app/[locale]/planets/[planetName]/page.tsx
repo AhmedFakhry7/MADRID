@@ -1129,6 +1129,42 @@ export default async function PlanetDetailsPage({
                       </a>
                     </Button>
                   )}
+                  {planet.slug === 'uranus' && (
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="text-white border-white/30 hover:bg-white/10 hover:text-white bg-red-600/50 hover:bg-red-600/70 border-red-500/50"
+                    >
+                      <a href="https://youtu.be/m4NXbFOiOGk?si=mYCWU02zZstkBv91" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <Youtube className="h-5 w-5" />
+                        {params.locale === 'ar' ? 'شاهد فيديو' : 'Watch Video'}
+                      </a>
+                    </Button>
+                  )}
+                  {planet.slug === 'neptune' && (
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="text-white border-white/30 hover:bg-white/10 hover:text-white bg-red-600/50 hover:bg-red-600/70 border-red-500/50"
+                    >
+                      <a href="https://youtu.be/NStn7zZKXfE?si=PWLfJXKd7-WAA7Ak" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <Youtube className="h-5 w-5" />
+                        {params.locale === 'ar' ? 'شاهد فيديو' : 'Watch Video'}
+                      </a>
+                    </Button>
+                  )}
+                  {planet.slug === 'sun' && (
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="text-white border-white/30 hover:bg-white/10 hover:text-white bg-red-600/50 hover:bg-red-600/70 border-red-500/50"
+                    >
+                      <a href="https://youtu.be/2HoTK_Gqi2Q?si=R0R9Sc10Ed6taKJs" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <Youtube className="h-5 w-5" />
+                        {params.locale === 'ar' ? 'شاهد فيديو' : 'Watch Video'}
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
