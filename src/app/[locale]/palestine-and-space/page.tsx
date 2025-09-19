@@ -19,8 +19,8 @@ export default async function PalestineAndSpacePage({
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1 container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
+      <main className="flex-1 flex flex-col items-center justify-center container mx-auto px-4 py-12">
+        <div className="max-w-4xl w-full">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-500 via-white to-red-500 bg-clip-text text-transparent mb-4 flex items-center justify-center gap-4">
               <PalestineFlagIcon className="w-10 h-10 md:w-12 md:h-12" />
