@@ -9,6 +9,7 @@ import { ArrowLeft } from 'lucide-react';
 import { getPlaceholderImage } from '@/lib/placeholder-images';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import type { ReactNode } from 'react';
+import { SpaceAudioPlayer } from '@/components/space-audio-player';
 
 export default async function PlanetDetailsPage({ params }: { params: { planetName: string } }) {
   const planet = planets.find((p) => p.slug === params.planetName);
@@ -451,6 +452,7 @@ export default async function PlanetDetailsPage({ params }: { params: { planetNa
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
+      <SpaceAudioPlayer src="/space-music.mp3" />
       <main className="flex-1 container mx-auto px-4 py-12 flex items-center justify-center">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 w-full">
           <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:w-1/3 flex-shrink-0">
