@@ -17,7 +17,7 @@ export const palestineQuizDataEn: QuizQuestion[] = [
         correct: "Loay Elbasyouni"
     },
     {
-        question: "Which Palestinian institution connects Palestinian youth with international activities?",
+        question: "Which Palestinian institution connects Palestinian youth with international space activities?",
         options: ["Space Generation Advisory Council", "UNESCO Chair in Astronomy", "Scientists in a Global World"],
         correct: "Space Generation Advisory Council"
     },
