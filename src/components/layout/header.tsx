@@ -2,12 +2,19 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const SpaceLogo = () => (
-    <svg className="w-10 h-10 text-accent" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g>
-            <circle cx="50" cy="50" r="28" fill="hsl(var(--primary))" stroke="hsl(var(--accent))" strokeWidth="3"/>
-            <path d="M25 75 C 40 50, 60 50, 75 75" stroke="hsl(var(--accent))" strokeWidth="3" fill="none" transform="rotate(-30 50 50)" />
-            <path d="M20 30 Q 50 10, 80 30" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-            <circle cx="75" cy="25" r="4" fill="white" />
+    <svg className="w-12 h-12 text-white" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* Stars */}
+        <path d="M8 12L9 14L11 14.5L9.5 15.5L10 17.5L8 16.5L6 17.5L6.5 15.5L5 14.5L7 14Z" fill="white"/>
+        <path d="M52 20L53 22L55 22.5L53.5 23.5L54 25.5L52 24.5L50 25.5L50.5 23.5L49 22.5L51 22Z" fill="white"/>
+        <path d="M15 50L16 52L18 52.5L16.5 53.5L17 55.5L15 54.5L13 55.5L13.5 53.5L12 52.5L14 52Z" fill="white" opacity="0.7"/>
+        
+        {/* Astronaut */}
+        <g transform="translate(16, 8) scale(0.6)">
+            <ellipse cx="25" cy="35" rx="18" ry="22" fill="#E5E7EB" stroke="#9CA3AF" strokeWidth="2.5" />
+            <circle cx="25" cy="15" r="20" fill="#D1D5DB" stroke="#9CA3AF" strokeWidth="2.5" />
+            <ellipse cx="25" cy="15" rx="18" ry="16" fill="hsla(var(--accent)/0.3)" stroke="hsl(var(--accent))" strokeWidth="2" />
+            <circle cx="20" cy="14" r="2" fill="white" />
+            <line x1="28" y1="18" x2="33" y2="16" stroke="white" strokeWidth="1.5" />
         </g>
     </svg>
 );
@@ -17,9 +24,9 @@ export function Header() {
     return (
         <header className="relative z-50">
             <nav className="flex items-center justify-between px-4 md:px-8 py-4 bg-black/20 backdrop-blur-sm border-b border-white/10">
-                <Link href="/" className="flex items-center gap-3" aria-label="Homepage">
+                <Link href="/" className="flex items-center gap-2" aria-label="Homepage">
                     <SpaceLogo />
-                    <span className="text-xl font-bold text-white">مستكشفوا الفضاء</span>
+                    <span className="text-lg font-bold text-white">بين النجوم</span>
                 </Link>
                 <div className="hidden md:flex items-center gap-2 text-sm font-medium">
                     <Button variant="link" asChild className="text-white text-base hover:text-accent transition-colors px-3 py-2">
