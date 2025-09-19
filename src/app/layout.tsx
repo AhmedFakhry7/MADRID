@@ -1,40 +1,29 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import { cn } from '@/lib/utils';
-import { Toaster } from '@/components/ui/toaster';
+import { locales } from '@/navigation';
+import { notFound } from 'next/navigation';
+import {NextIntlClientProvider} from 'next-intl';
 
-export const metadata: Metadata = {
-  title: 'مستكشفو الكون',
-  description:
-    'موقع تعليمي لاستكشاف الفضاء مقدم من فريق مستكشفو الكون في هاكاثون ناسا.',
+type Props = {
+  children: React.ReactNode;
+  params: {locale: string};
 };
 
-export default function RootLayout({
-  children,
-  params: { locale },
-}: Readonly<{
-  children: React.ReactNode;
-  params: { locale: string };
-}>) {
+export default async function LocaleLayout({children, params: {locale}}: Props) {
+  // Validate that the incoming `locale` parameter is valid
+  if (!locales.includes(locale as any)) notFound();
+ 
+  let messages;
+  try {
+    messages = (await import(`../../messages/${locale}.json`)).default;
+  } catch (error) {
+    notFound();
+  }
+
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body
-        className={cn('min-h-screen font-body antialiased space-bg text-white')}
-      >
-        {children}
-        <Toaster />
+    <html lang={locale}>
+      <body>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
