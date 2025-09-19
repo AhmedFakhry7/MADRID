@@ -98,19 +98,6 @@ export default async function PalestineAndSpacePage({
               </CardContent>
             </Card>
           </div>
-
-          <div className="text-center mt-12">
-            <Button
-              asChild
-              size="lg"
-              className="glow-button px-8 py-4 bg-accent text-accent-foreground text-lg font-semibold rounded-xl hover:bg-accent/90 transition-all"
-            >
-              <Link href="/palestine-quiz">
-                <Rocket className="ltr:mr-2 rtl:ml-2" />
-                {t('palestineQuiz')}
-              </Link>
-            </Button>
-          </div>
         </div>
       </main>
     </div>
