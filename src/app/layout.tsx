@@ -1,30 +1,12 @@
-import { locales } from '@/navigation';
-import { notFound } from 'next/navigation';
-import {NextIntlClientProvider} from 'next-intl';
+import type { ReactNode } from 'react';
 
 type Props = {
-  children: React.ReactNode;
-  params: {locale: string};
+  children: ReactNode;
 };
 
-export default async function LocaleLayout({children, params: {locale}}: Props) {
-  // Validate that the incoming `locale` parameter is valid
-  if (!locales.includes(locale as any)) notFound();
- 
-  let messages;
-  try {
-    messages = (await import(`../../messages/${locale}.json`)).default;
-  } catch (error) {
-    notFound();
-  }
-
-  return (
-    <html lang={locale}>
-      <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
-  );
+// Even though this component is just passing its children through, the presence
+// of this file fixes an issue in Next.js 13.4 where link clicks that switch
+// the locale would otherwise cause a full page refresh.
+export default function RootLayout({ children }: Props) {
+  return children;
 }

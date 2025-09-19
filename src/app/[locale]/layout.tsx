@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import '../globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: 'مستكشفو الكون',
@@ -10,15 +11,15 @@ export const metadata: Metadata = {
     'موقع تعليمي لاستكشاف الفضاء مقدم من فريق مستكشفو الكون في هاكاثون ناسا.',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: { locale },
 }: Readonly<{
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-  const messages = useMessages();
-  
+  const messages = await getMessages();
+
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <head>
