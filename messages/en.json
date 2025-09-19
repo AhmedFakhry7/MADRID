@@ -1,3 +1,4 @@
+
 {
   "Header": {
     "title": "Interstellar",
@@ -23,6 +24,18 @@
   "PlanetDetailsPage": {
     "backToPlanets": "Back to Planets",
     "loadingError": "Sorry, we were unable to load the description for this planet at this time. The model may be busy. Please try again later."
+  },
+  "QuizPage": {
+    "loading": "Loading questions...",
+    "finishedTitle": "🌟 Quiz Finished!",
+    "finalScore": "Your final score is",
+    "retry": "Retry Quiz",
+    "backToHome": "Back to Home",
+    "chooseCorrect": "Choose the correct answer",
+    "correctAnswer": "✅ Correct answer!",
+    "wrongAnswer": "❌ Wrong answer. The correct answer is: {correctAnswer}",
+    "nextQuestion": "Next Question",
+    "showResult": "Show Result"
   },
   "Planets": {
     "mercury": "Mercury",
