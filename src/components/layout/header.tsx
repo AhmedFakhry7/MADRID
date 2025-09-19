@@ -3,12 +3,9 @@ import { Button } from "@/components/ui/button";
 
 const SpaceLogo = () => (
     <svg className="w-12 h-12 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9.17188 2C9.58245 2 9.98298 2.08594 10.3441 2.24883L17.3441 5.74883C18.4418 6.29769 19.1009 7.42074 19.1009 8.65589V15.3441C19.1009 16.5793 18.4418 17.7023 17.3441 18.2512L10.3441 21.7512C9.98298 21.9141 9.58245 22 9.17188 22H7.82812C7.41755 22 7.01702 21.9141 6.65587 21.7512L2.65587 19.7512C1.55823 19.2023 0.899048 18.0793 0.899048 16.8441V7.15589C0.899048 5.92074 1.55823 4.79769 2.65587 4.24883L6.65587 2.24883C7.01702 2.08594 7.41755 2 7.82812 2H9.17188Z" fill="hsl(var(--primary))" stroke="hsl(var(--border))" strokeWidth="1.5"/>
-        <path d="M12.5 18C12.5 18.2761 12.2761 18.5 12 18.5C11.7239 18.5 11.5 18.2761 11.5 18C11.5 17.7239 11.7239 17.5 12 17.5C12.2761 17.5 12.5 17.7239 12.5 18Z" fill="white"/>
-        <path d="M11 5.5L8.5 8H13.5L11 5.5Z" fill="#E5E7EB"/>
-        <path d="M8.5 8L11 15.5L13.5 8H8.5Z" fill="#F3F4F6"/>
-        <path d="M11 15.5L8.5 17H13.5L11 15.5Z" fill="hsl(var(--accent))"/>
-        <path d="M11 17.5L9.5 20H12.5L11 17.5Z" fill="hsl(var(--accent) / 0.7)"/>
+        <path d="M12 2C6.47715 2 2 6.47715 2 12V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V12C22 6.47715 17.5228 2 12 2Z" fill="hsl(var(--primary))" stroke="hsl(var(--border))" strokeWidth="1.5"/>
+        <rect x="5" y="9" width="14" height="6" rx="3" fill="hsl(var(--background))" stroke="hsl(var(--border))" strokeWidth="1.5" />
+        <path d="M7 12H9" stroke="hsl(var(--accent))" strokeWidth="1.5" strokeLinecap="round"/>
     </svg>
 );
 
