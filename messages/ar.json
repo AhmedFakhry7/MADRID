@@ -6,13 +6,15 @@
     "planets": "الكواكب",
     "quiz": "اختبار",
     "login": "تسجيل دخول",
-    "signup": "تسجيل"
+    "signup": "تسجيل",
+    "palestineAndSpace": "فلسطين والفضاء"
   },
   "HomePage": {
     "title": "استكشف الفضاء",
     "subtitle": "انطلق في رحلة مذهلة عبر الكون واكتشف أسرار الفضاء الخارجي",
     "startQuiz": "ابدأ الأسئلة",
-    "explorePlanets": "استكشف الكواكب"
+    "explorePlanets": "استكشف الكواكب",
+    "palestineAndSpace": "فلسطين والفضاء"
   },
   "PlanetsPage": {
     "title": "استكشاف الكون",
@@ -71,5 +73,25 @@
     "createButton": "إنشاء حساب",
     "loginPrompt": "لديك حساب بالفعل؟",
     "loginLink": "تسجيل الدخول"
+  },
+  "PalestineAndSpacePage": {
+    "title": "فلسطين والفضاء",
+    "peopleTitle": "الأشخاص الفلسطينيون المرتبطون بناسا",
+    "aseelAnabtawi": "أسيل عنبتاوي",
+    "aseelAnabtawiFrom": "من طولكرم، فلسطين",
+    "aseelAnabtawiRole": "مهندسة كهربائية / مهندسة في المجال الفضائي.",
+    "aseelAnabtawiWork": "اشتغلت في مختبر الدفع النفاث (JPL) التابع لناسا",
+    "aseelAnabtawiProjects": "من أعمالها: مشروع Cassini–Huygens لاستكشاف زحل",
+    "aseelAnabtawiAwards": "وحصلت على ميداليات ناسا للتفوق في عملها.",
+    "loayElbasyouni": "لُؤي البسيوني",
+    "loayElbasyouniFrom": "فلسطيني-أمريكي",
+    "loayElbasyouniWork": "شارك في فريق \"الهليكوبتر المريخية\" (Ingenuity) التابعة لناسا ضمن مهمة Mars 2020.",
+    "nujoudMerancy": "نُجود مرانسي",
+    "nujoudMerancyMention": "اسمه مذكور ضمن المقال “Scientists in a Global World” كعالم فلسطيني يعمل في منصب مهم مع ناسا",
+    "nujoudMerancyRole": "منصبه: chief of NASA’s Exploration Mission Planning Office في هيوستن، تكساس.",
+    "institutionsTitle": "مؤسسات فلسطينية / برامج تعليمية مرتبطة",
+    "sgac": "Space Generation Advisory Council – فلسطين",
+    "sgacDesc": "جمعية شبابية بيئة مهتمة بالفضاء والفلك، بتربط الشباب الفلسطيني بالأنشطة الدولية في الفضاء.",
+    "unescoChair": "UNESCO Chair in Astronomy, Astrophysics and Space Sciences في الجامعات الفلسطينية (جامعات غزة والأقصى والعلمية الإسلامية) — جزء من دعم عالمي للعلوم الفلكية"
   }
 }
