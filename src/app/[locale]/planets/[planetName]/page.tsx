@@ -1117,6 +1117,18 @@ export default async function PlanetDetailsPage({
                       </a>
                     </Button>
                   )}
+                  {planet.slug === 'saturn' && (
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="text-white border-white/30 hover:bg-white/10 hover:text-white bg-red-600/50 hover:bg-red-600/70 border-red-500/50"
+                    >
+                      <a href="https://youtu.be/epZdZaEQhS0?si=T56Fyz_GmAIX2z7V" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <Youtube className="h-5 w-5" />
+                        {params.locale === 'ar' ? 'شاهد فيديو' : 'Watch Video'}
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
