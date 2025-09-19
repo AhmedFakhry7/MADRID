@@ -1,3 +1,5 @@
+"use client";
+
 import { Header } from "@/components/layout/header";
 import { PalestineQuizGame } from "@/components/palestine-quiz-game";
 
