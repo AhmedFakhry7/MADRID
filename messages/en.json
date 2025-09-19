@@ -1,0 +1,40 @@
+{
+  "Header": {
+    "title": "Interstellar",
+    "home": "Home",
+    "planets": "Planets",
+    "quiz": "Quiz",
+    "login": "Login",
+    "signup": "Sign Up"
+  },
+  "HomePage": {
+    "title": "Explore Space",
+    "subtitle": "Embark on an amazing journey through the universe and discover the secrets of outer space.",
+    "startQuiz": "Start Quiz",
+    "explorePlanets": "Explore Planets"
+  },
+  "PlanetsPage": {
+    "title": "Explore the Universe",
+    "subtitle": "Embark on a journey to explore the worlds of our solar system and beyond, from rocky planets to amazing cosmic phenomena."
+  },
+  "PlanetCard": {
+    "exploreNow": "Explore Now"
+  },
+  "PlanetDetailsPage": {
+    "backToPlanets": "Back to Planets",
+    "loadingError": "Sorry, we were unable to load the description for this planet at this time. The model may be busy. Please try again later."
+  },
+  "Planets": {
+    "mercury": "Mercury",
+    "venus": "Venus",
+    "earth": "Earth",
+    "mars": "Mars",
+    "jupiter": "Jupiter",
+    "saturn": "Saturn",
+    "uranus": "Uranus",
+    "neptune": "Neptune",
+    "sun": "The Sun",
+    "milky-way": "Milky Way Galaxy",
+    "black-holes": "Black Holes"
+  }
+}

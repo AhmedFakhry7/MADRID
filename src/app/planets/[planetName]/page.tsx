@@ -1,18 +1,36 @@
-import Link from 'next/link';
+import Link from 'next-intl/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/layout/header';
 import { planets } from '@/lib/planets-data';
 import { generatePlanetDescription } from '@/ai/flows/generate-planet-description';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { getPlaceholderImage } from '@/lib/placeholder-images';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import type { ReactNode } from 'react';
 import { SpaceAudioPlayer } from '@/components/space-audio-player';
+import { getTranslations } from 'next-intl/server';
 
-export default async function PlanetDetailsPage({ params }: { params: { planetName: string } }) {
-  const planet = planets.find((p) => p.slug === params.planetName);
+export default async function PlanetDetailsPage({
+  params,
+}: {
+  params: { planetName: string; locale: string };
+}) {
+  const planet = planets.find(p => p.slug === params.planetName);
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: 'PlanetDetailsPage',
+  });
+  const tPlanets = await getTranslations({
+    locale: params.locale,
+    namespace: 'Planets',
+  });
 
   if (!planet) {
     notFound();
@@ -304,150 +322,224 @@ export default async function PlanetDetailsPage({ params }: { params: { planetNa
     );
   } else if (planet.slug === 'sun') {
     description = (
-        <div className="space-y-4">
-            <div>
-                <h3 className="font-bold text-xl mb-2">نجم في قلب نظامنا</h3>
-                <p>الشمس هي النجم المركزي للمجموعة الشمسية، وهي عبارة عن كرة ضخمة من الغاز الساخن المتوهج، وتتكون أساسًا من الهيدروجين (حوالي 74%) والهيليوم (حوالي 24%).</p>
-            </div>
-            <div>
-                <h3 className="font-bold text-xl mb-2">مصدر الطاقة والحياة</h3>
-                <p>تنتج الشمس طاقتها من خلال الاندماج النووي في نواتها، حيث تتحول ذرات الهيدروجين إلى هيليوم، مُطلقةً كميات هائلة من الطاقة على شكل ضوء وحرارة، وهي أساس الحياة على الأرض.</p>
-            </div>
-            <div>
-                <h3 className="font-bold text-xl mb-2">حقائق مذهلة</h3>
-                <ul className="list-disc list-inside space-y-1">
-                    <li>يبلغ قطر الشمس حوالي 1.4 مليون كيلومتر، أي ما يعادل 109 أضعاف قطر الأرض.</li>
-                    <li>تصل درجة الحرارة في نواتها إلى حوالي 15 مليون درجة مئوية.</li>
-                    <li>يستغرق ضوء الشمس حوالي 8 دقائق و 20 ثانية للوصول إلى الأرض.</li>
-                </ul>
-            </div>
+      <div className="space-y-4">
+        <div>
+          <h3 className="font-bold text-xl mb-2">نجم في قلب نظامنا</h3>
+          <p>
+            الشمس هي النجم المركزي للمجموعة الشمسية، وهي عبارة عن كرة ضخمة من
+            الغاز الساخن المتوهج، وتتكون أساسًا من الهيدروجين (حوالي 74%)
+            والهيليوم (حوالي 24%).
+          </p>
         </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">مصدر الطاقة والحياة</h3>
+          <p>
+            تنتج الشمس طاقتها من خلال الاندماج النووي في نواتها، حيث تتحول ذرات
+            الهيدروجين إلى هيليوم، مُطلقةً كميات هائلة من الطاقة على شكل ضوء
+            وحرارة، وهي أساس الحياة على الأرض.
+          </p>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">حقائق مذهلة</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>يبلغ قطر الشمس حوالي 1.4 مليون كيلومتر، أي ما يعادل 109 أضعاف قطر الأرض.</li>
+            <li>تصل درجة الحرارة في نواتها إلى حوالي 15 مليون درجة مئوية.</li>
+            <li>يستغرق ضوء الشمس حوالي 8 دقائق و 20 ثانية للوصول إلى الأرض.</li>
+          </ul>
+        </div>
+      </div>
     );
   } else if (planet.slug === 'milky-way') {
-      description = (
-          <div className="space-y-4">
-              <div>
-                  <h3 className="font-bold text-xl mb-2">تعريف عام</h3>
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>درب التبانة هي المجرة التي ننتمي إليها نحن وكوكب الأرض وكل الكواكب والنجوم التي نراها في السماء تقريبًا.</li>
-                    <li>هي عبارة عن نظام ضخم جدًا من النجوم، الغاز، الغبار الكوني، والمادة المظلمة.</li>
-                  </ul>
-              </div>
-              <div>
-                  <h3 className="font-bold text-xl mb-2">الشكل والحجم</h3>
-                  <ul className="list-disc list-inside space-y-1">
-                      <li>شكلها حلزوني (Spiral Galaxy) وبه أذرع لولبية.</li>
-                      <li>يتراوح قطرها ما بين 100,000 – 120,000 سنة ضوئية.</li>
-                  </ul>
-              </div>
-              <div>
-                  <h3 className="font-bold text-xl mb-2">مكونات مجرة درب التبانة</h3>
-                  <p className="font-semibold">1. النواة:</p>
-                  <ul className="list-disc list-inside space-y-1 pr-4">
-                      <li>في مركز المجرة يوجد جسم ضخم جدًا يُعتقد أنه ثقب أسود فائق الكتلة.</li>
-                      <li>كتلته حوالي 4 مليون مرة كتلة الشمس.</li>
-                  </ul>
-                  <p className="font-semibold mt-2">2. الأذرع الحلزونية:</p>
-                   <ul className="list-disc list-inside space-y-1 pr-4">
-                      <li>الأذرع الرئيسية: ذراع الجبار ← نحن موجودون فيه.</li>
-                      <li>هذه الأذرع مليئة بالنجوم الجديدة التي تتولد والسُدم المضيئة.</li>
-                  </ul>
-              </div>
-              <div>
-                  <h3 className="font-bold text-xl mb-2">عدد النجوم والكواكب</h3>
-                  <ul className="list-disc list-inside space-y-1">
-                      <li>التقديرات تقول إن المجرة فيها ما بين 100 – 400 مليار نجم.</li>
-                      <li>الدراسات الحديثة تقول أنه قد يكون هناك أكثر من 100 مليار كوكب.</li>
-                  </ul>
-              </div>
-              <div>
-                  <h3 className="font-bold text-xl mb-2">الظواهر المهمة في المجرة</h3>
-                  <ul className="list-disc list-inside space-y-1">
-                      <li>السدم (Nebulae): أماكن لتكوّن النجوم (مثل سديم الجبار).</li>
-                      <li>الثقوب السوداء والنجوم النيوترونية: ناتجة عن موت نجوم ضخمة.</li>
-                  </ul>
-              </div>
-              <div>
-                  <h3 className="font-bold text-xl mb-2">العمر والتطور</h3>
-                  <ul className="list-disc list-inside space-y-1">
-                      <li>عمر مجرة درب التبانة حوالي 13.6 مليار سنة (أي قريبة جدًا من عمر الكون الذي هو 13.8 مليار سنة).</li>
-                      <li>لا تزال تتطور وتتجمع مع مجرات صغيرة حولها.</li>
-                      <li>في المستقبل (بعد حوالي 4 مليار سنة) ستصطدم مع مجرة أندروميدا (Andromeda Galaxy) وسيندمجون معًا ليشكلوا مجرة جديدة عملاقة.</li>
-                  </ul>
-              </div>
-              <div>
-                  <h3 className="font-bold text-xl mb-2">الرؤية من الأرض</h3>
-                   <ul className="list-disc list-inside space-y-1">
-                      <li>عندما تنظر في سماء صافية بعيدًا عن التلوث الضوئي، سترى شريطًا أبيض لامعًا ممتدًا عبر السماء ← هذا هو درب التبانة.</li>
-                      <li>جاء الاسم من شكله الذي يشبه اللبن المسكوب أو التبن المنتشر.</li>
-                  </ul>
-              </div>
-          </div>
-      );
-  } else if (planet.slug === 'black-holes') {
-      description = (
-        <div className="space-y-4">
-            <div>
-                <h3 className="font-bold text-xl mb-2">أولاً: ما هو الثقب الأسود؟</h3>
-                <ul className="list-disc list-inside space-y-2">
-                    <li>الثقب الأسود هو منطقة في الفضاء ذات جاذبية هائلة لدرجة أن أي شيء يقترب منها لا يستطيع الهروب، حتى الضوء نفسه.</li>
-                    <li>يتكوّن عادةً نتيجة انهيار نجم ضخم جدًا بعد أن ينهي وقوده النووي ← ينفجر في صورة مستعر أعظم ← ثم ينهار على نفسه ليكوّن ثقبًا أسود.</li>
-                    <li>
-                        أهم أجزائه هي:
-                        <ul className="list-disc list-inside space-y-1 pr-4 mt-1">
-                            <li><strong>الأفق الحدثي:</strong> الحد الفاصل الذي إذا تجاوزه أي شيء، لا يمكنه العودة.</li>
-                            <li><strong>التفرد:</strong> نقطة الكثافة اللامتناهية في المركز، حيث تفشل قوانين الفيزياء كما نعرفها.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h3 className="font-bold text-xl mb-2">ثانياً: تاريخ التنبؤ بالثقوب السوداء</h3>
-                <p className="font-semibold">1. القرن 18:</p>
-                <ul className="list-disc list-inside space-y-1 pr-4">
-                    <li>اقترح العالمان جون ميتشيل وبيير لابلاس فكرة "نجوم مظلمة" ضخمة لديها جاذبية تمنع الضوء من الخروج منها.</li>
-                </ul>
-                <p className="font-semibold mt-2">2. النظرية النسبية العامة (1915):</p>
-                <ul className="list-disc list-inside space-y-1 pr-4">
-                    <li>نشر ألبرت أينشتاين نظريته التي فسرت الجاذبية كانحناء في نسيج الزمكان.</li>
-                    <li>بعد ذلك مباشرةً، قدم كارل شوارزشيلد أول حل رياضي لمعادلات أينشتاين يصف "الثقب الأسود".</li>
-                </ul>
-            </div>
-            <div>
-                <h3 className="font-bold text-xl mb-2">ثالثاً: تصوير الثقوب السوداء</h3>
-                <p className="font-semibold">1. الصورة الأولى في التاريخ (2019):</p>
-                <ul className="list-disc list-inside space-y-1 pr-4">
-                    <li>أعلن فريق تلسكوب أفق الحدث (Event Horizon Telescope) عن أول صورة لثقب أسود.</li>
-                    <li>هذا الثقب موجود في مجرة M87، ويبعد عنا 55 مليون سنة ضوئية.</li>
-                    <li>أظهرت الصورة "حلقة مضيئة" حول ظل الثقب الأسود.</li>
-                </ul>
-                <p className="font-semibold mt-2">2. الصورة الثانية (2022):</p>
-                <ul className="list-disc list-inside space-y-1 pr-4">
-                    <li>نشر نفس الفريق صورة للثقب الأسود الموجود في مركز مجرتنا، درب التبانة.</li>
-                    <li>تم التأكيد أن كتلته تعادل حوالي 4 مليون مرة كتلة الشمس.</li>
-                </ul>
-            </div>
-            <div>
-                <h3 className="font-bold text-xl mb-2">أنواع الثقوب السوداء</h3>
-                <ul className="list-disc list-inside space-y-1">
-                    <li><strong>ثقوب سوداء نجمية:</strong> ناتجة عن موت نجم ضخم. كتلتها من 3 إلى عشرات المرات أكبر من كتلة الشمس.</li>
-                    <li><strong>ثقوب سوداء فائقة الكتلة:</strong> موجودة في مراكز المجرات. كتلتها ملايين أو مليارات أضعاف كتلة الشمس.</li>
-                    <li><strong>ثقوب سوداء متوسطة الكتلة:</strong> نادرة ويصعب رصدها، وتقع كتلتها بين النوعين الآخرين.</li>
-                </ul>
-            </div>
+    description = (
+      <div className="space-y-4">
+        <div>
+          <h3 className="font-bold text-xl mb-2">تعريف عام</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>
+              درب التبانة هي المجرة التي ننتمي إليها نحن وكوكب الأرض وكل الكواكب
+              والنجوم التي نراها في السماء تقريبًا.
+            </li>
+            <li>
+              هي عبارة عن نظام ضخم جدًا من النجوم، الغاز، الغبار الكوني، والمادة
+              المظلمة.
+            </li>
+          </ul>
         </div>
-      );
+        <div>
+          <h3 className="font-bold text-xl mb-2">الشكل والحجم</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>شكلها حلزوني (Spiral Galaxy) وبه أذرع لولبية.</li>
+            <li>يتراوح قطرها ما بين 100,000 – 120,000 سنة ضوئية.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">مكونات مجرة درب التبانة</h3>
+          <p className="font-semibold">1. النواة:</p>
+          <ul className="list-disc list-inside space-y-1 pr-4">
+            <li>
+              في مركز المجرة يوجد جسم ضخم جدًا يُعتقد أنه ثقب أسود فائق الكتلة.
+            </li>
+            <li>كتلته حوالي 4 مليون مرة كتلة الشمس.</li>
+          </ul>
+          <p className="font-semibold mt-2">2. الأذرع الحلزونية:</p>
+          <ul className="list-disc list-inside space-y-1 pr-4">
+            <li>الأذرع الرئيسية: ذراع الجبار ← نحن موجودون فيه.</li>
+            <li>هذه الأذرع مليئة بالنجوم الجديدة التي تتولد والسُدم المضيئة.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">عدد النجوم والكواكب</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>التقديرات تقول إن المجرة فيها ما بين 100 – 400 مليار نجم.</li>
+            <li>الدراسات الحديثة تقول أنه قد يكون هناك أكثر من 100 مليار كوكب.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">الظواهر المهمة في المجرة</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>السدم (Nebulae): أماكن لتكوّن النجوم (مثل سديم الجبار).</li>
+            <li>الثقوب السوداء والنجوم النيوترونية: ناتجة عن موت نجوم ضخمة.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">العمر والتطور</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>
+              عمر مجرة درب التبانة حوالي 13.6 مليار سنة (أي قريبة جدًا من عمر
+              الكون الذي هو 13.8 مليار سنة).
+            </li>
+            <li>لا تزال تتطور وتتجمع مع مجرات صغيرة حولها.</li>
+            <li>
+              في المستقبل (بعد حوالي 4 مليار سنة) ستصطدم مع مجرة أندروميدا
+              (Andromeda Galaxy) وسيندمجون معًا ليشكلوا مجرة جديدة عملاقة.
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">الرؤية من الأرض</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>
+              عندما تنظر في سماء صافية بعيدًا عن التلوث الضوئي، سترى شريطًا
+              أبيض لامعًا ممتدًا عبر السماء ← هذا هو درب التبانة.
+            </li>
+            <li>جاء الاسم من شكله الذي يشبه اللبن المسكوب أو التبن المنتشر.</li>
+          </ul>
+        </div>
+      </div>
+    );
+  } else if (planet.slug === 'black-holes') {
+    description = (
+      <div className="space-y-4">
+        <div>
+          <h3 className="font-bold text-xl mb-2">أولاً: ما هو الثقب الأسود؟</h3>
+          <ul className="list-disc list-inside space-y-2">
+            <li>
+              الثقب الأسود هو منطقة في الفضاء ذات جاذبية هائلة لدرجة أن أي شيء
+              يقترب منها لا يستطيع الهروب، حتى الضوء نفسه.
+            </li>
+            <li>
+              يتكوّن عادةً نتيجة انهيار نجم ضخم جدًا بعد أن ينهي وقوده النووي
+              ← ينفجر في صورة مستعر أعظم ← ثم ينهار على نفسه ليكوّن ثقبًا أسود.
+            </li>
+            <li>
+              أهم أجزائه هي:
+              <ul className="list-disc list-inside space-y-1 pr-4 mt-1">
+                <li>
+                  <strong>الأفق الحدثي:</strong> الحد الفاصل الذي إذا تجاوزه أي
+                  شيء، لا يمكنه العودة.
+                </li>
+                <li>
+                  <strong>التفرد:</strong> نقطة الكثافة اللامتناهية في المركز،
+                  حيث تفشل قوانين الفيزياء كما نعرفها.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">
+            ثانياً: تاريخ التنبؤ بالثقوب السوداء
+          </h3>
+          <p className="font-semibold">1. القرن 18:</p>
+          <ul className="list-disc list-inside space-y-1 pr-4">
+            <li>
+              اقترح العالمان جون ميتشيل وبيير لابلاس فكرة "نجوم مظلمة" ضخمة
+              لديها جاذبية تمنع الضوء من الخروج منها.
+            </li>
+          </ul>
+          <p className="font-semibold mt-2">2. النظرية النسبية العامة (1915):</p>
+          <ul className="list-disc list-inside space-y-1 pr-4">
+            <li>
+              نشر ألبرت أينشتاين نظريته التي فسرت الجاذبية كانحناء في نسيج
+              الزمكان.
+            </li>
+            <li>
+              بعد ذلك مباشرةً، قدم كارل شوارزشيلد أول حل رياضي لمعادلات
+              أينشتاين يصف "الثقب الأسود".
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">ثالثاً: تصوير الثقوب السوداء</h3>
+          <p className="font-semibold">1. الصورة الأولى في التاريخ (2019):</p>
+          <ul className="list-disc list-inside space-y-1 pr-4">
+            <li>
+              أعلن فريق تلسكوب أفق الحدث (Event Horizon Telescope) عن أول صورة
+              لثقب أسود.
+            </li>
+            <li>هذا الثقب موجود في مجرة M87، ويبعد عنا 55 مليون سنة ضوئية.</li>
+            <li>أظهرت الصورة "حلقة مضيئة" حول ظل الثقب الأسود.</li>
+          </ul>
+          <p className="font-semibold mt-2">2. الصورة الثانية (2022):</p>
+          <ul className="list-disc list-inside space-y-1 pr-4">
+            <li>
+              نشر نفس الفريق صورة للثقب الأسود الموجود في مركز مجرتنا، درب
+              التبانة.
+            </li>
+            <li>تم التأكيد أن كتلته تعادل حوالي 4 مليون مرة كتلة الشمس.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold text-xl mb-2">أنواع الثقوب السوداء</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>
+              <strong>ثقوب سوداء نجمية:</strong> ناتجة عن موت نجم ضخم. كتلتها
+              من 3 إلى عشرات المرات أكبر من كتلة الشمس.
+            </li>
+            <li>
+              <strong>ثقوب سوداء فائقة الكتلة:</strong> موجودة في مراكز
+              المجرات. كتلتها ملايين أو مليارات أضعاف كتلة الشمس.
+            </li>
+            <li>
+              <strong>ثقوب سوداء متوسطة الكتلة:</strong> نادرة ويصعب رصدها،
+              وتقع كتلتها بين النوعين الآخرين.
+            </li>
+          </ul>
+        </div>
+      </div>
+    );
   } else {
     try {
-      const result = await generatePlanetDescription({ planetName: planet.name });
-      description = <p className="text-lg md:text-xl leading-relaxed text-gray-200 whitespace-pre-wrap">{result.description}</p>;
+      const result = await generatePlanetDescription({
+        planetName: planet.name,
+      });
+      description = (
+        <p className="text-lg md:text-xl leading-relaxed text-gray-200 whitespace-pre-wrap">
+          {result.description}
+        </p>
+      );
     } catch (error) {
-      console.error("Failed to generate planet description:", error);
-      description = <p className="text-lg md:text-xl leading-relaxed text-yellow-300">عذرًا، لم نتمكن من تحميل وصف هذا الكوكب في الوقت الحالي. قد يكون النموذج مشغولاً. يرجى المحاولة مرة أخرى لاحقًا.</p>;
+      console.error('Failed to generate planet description:', error);
+      description = (
+        <p className="text-lg md:text-xl leading-relaxed text-yellow-300">
+          {t('loadingError')}
+        </p>
+      );
     }
   }
-  
+
   const placeholder = getPlaceholderImage(planet.image.id);
+  const planetName = tPlanets(planet.slug as any);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -458,7 +550,7 @@ export default async function PlanetDetailsPage({ params }: { params: { planetNa
           <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:w-1/3 flex-shrink-0">
             <Image
               src={placeholder.imageUrl}
-              alt={planet.name}
+              alt={planetName}
               width={500}
               height={500}
               className="rounded-full object-cover aspect-square planet-spin"
@@ -466,21 +558,34 @@ export default async function PlanetDetailsPage({ params }: { params: { planetNa
             />
           </div>
           <div className="w-full lg:w-2/3">
-            <Card className="bg-card/60 backdrop-blur-sm border-white/20 text-right">
+            <Card className="bg-card/60 backdrop-blur-sm border-white/20 rtl:text-right ltr:text-left">
               <CardHeader>
-                <CardTitle className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text" style={{backgroundImage: `url(${placeholder.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(1.5)'}}>
-                  {planet.name}
+                <CardTitle
+                  className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text"
+                  style={{
+                    backgroundImage: `url(${placeholder.imageUrl})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    filter: 'brightness(1.5)',
+                  }}
+                >
+                  {planetName}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-lg md:text-xl leading-relaxed text-gray-200">
-                  {description}
+                  {params.locale === 'ar' ? description : "Description available in Arabic only."}
                 </div>
                 <div className="mt-8">
-                  <Button asChild variant="outline" className="text-white border-white/30 hover:bg-white/10 hover:text-white">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="text-white border-white/30 hover:bg-white/10 hover:text-white"
+                  >
                     <Link href="/planets" className="flex items-center gap-2">
-                       العودة إلى الكواكب
-                      <ArrowLeft className="h-4 w-4" />
+                      <ArrowRight className="h-4 w-4 rtl:hidden" />
+                      {t('backToPlanets')}
+                      <ArrowLeft className="h-4 w-4 ltr:hidden" />
                     </Link>
                   </Button>
                 </div>
@@ -494,7 +599,10 @@ export default async function PlanetDetailsPage({ params }: { params: { planetNa
 }
 
 export async function generateStaticParams() {
-    return planets.map((planet) => ({
+  return locales.flatMap(locale =>
+    planets.map(planet => ({
+      locale,
       planetName: planet.slug,
-    }));
+    }))
+  );
 }
