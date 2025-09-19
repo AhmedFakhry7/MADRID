@@ -19,6 +19,12 @@ export function SpaceAudioPlayer({ src, volume = 0.1 }: SpaceAudioPlayerProps) {
         playPromise.catch(error => {
           // Autoplay was prevented.
           console.log("Audio autoplay was prevented by the browser.");
+          // We can try to play again when the user interacts with the page.
+          const handleInteraction = () => {
+            audioElement.play().catch(err => console.log("Second attempt to play failed:", err));
+            document.removeEventListener('click', handleInteraction);
+          };
+          document.addEventListener('click', handleInteraction);
         });
       }
     }
