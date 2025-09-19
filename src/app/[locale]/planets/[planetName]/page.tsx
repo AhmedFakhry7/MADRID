@@ -523,6 +523,468 @@ export default async function PlanetDetailsPage({
         </div>
       );
     }
+  } else if (params.locale === 'en') {
+    if (planet.slug === 'mercury') {
+      description = (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-bold text-xl mb-2">Definition and Measurements</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Closest planet to the Sun and the smallest planet</li>
+              <li>Gravity is 0.38 of Earth's gravity</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Orbit and Rotation</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Year is 88 days</li>
+              <li>Axial day is 59 days</li>
+              <li>Solar day is about 176 days</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Surface and Environment</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Surface full of craters like the Moon</li>
+              <li>No effective atmosphere, no currently active volcanoes</li>
+              <li>Presence of ice in deep polar craters</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Atmosphere and Temperature</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>It has a weak atmosphere</li>
+              <li>Daytime temperature reaches about +430°C</li>
+              <li>Nighttime temperature drops to about -180°C</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Moons</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>No moons</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Amazing Facts</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>The Sun appears three times larger than we see it from Earth</li>
+              <li>Surface impacts remain for millions of years</li>
+              <li>The Sun may rise, set, and rise again at dawn due to its special motion</li>
+            </ul>
+          </div>
+        </div>
+      );
+    } else if (planet.slug === 'venus') {
+      description = (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-bold text-xl mb-2">Definition and Measurements</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Second planet, and Earth's twin in size and mass, approximately</li>
+              <li>The brightest planet, seen as the morning or evening star</li>
+              <li>Gravity is 0.9 of Earth's gravity</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Orbit and Rotation</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Year is 225 days</li>
+              <li>Day is 243 days, which is longer than its year</li>
+              <li>Rotates from East to West (opposite to other planets)</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Surface, Atmosphere, and Temperature</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Thick clouds of carbon dioxide and sulfuric acid</li>
+              <li>Atmosphere is about 90 times denser than Earth's</li>
+              <li>Composition: 96% carbon dioxide, 3% nitrogen</li>
+              <li>Surface temperature is nearly constant at about 465°C</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Phenomena, Moons, Exploration</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Upper winds circle the planet in about 4 days</li>
+              <li>Acid rain that evaporates before reaching the surface</li>
+              <li>No moons</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Amazing Facts</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>The Sun rises from the west and sets in the east</li>
+              <li>Pressure is equivalent to a depth of 900 meters under water on Earth</li>
+            </ul>
+          </div>
+        </div>
+      );
+    } else if (planet.slug === 'earth') {
+      description = (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-bold text-xl mb-2">Structure</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Structure: Solid inner core, liquid outer core, mantle, crust</li>
+              <li>150 million kilometers away from the Sun</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Climate and Atmosphere</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>78% nitrogen, 21% oxygen, 1% other gases</li>
+              <li>Protects from ultraviolet rays, regulates temperature, and allows life</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Surface and Time</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>71% water, 29% land</li>
+              <li>Diverse terrain and active tectonic plates</li>
+              <li>Day is about 24 hours, year is about 365.25 days</li>
+              <li>Axial tilt of 23.5° causes seasons</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">The Moon</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Has one moon</li>
+              <li>Gravity is one-sixth of Earth's gravity</li>
+              <li>No effective atmosphere and large temperature variations</li>
+              <li>Synchronous rotation, so we always see the near side</li>
+              <li>Responsible for tides</li>
+              <li>Likely formation: a giant impact</li>
+              <li>Exploration: human landing and projects for return</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Special Features</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>The only known planet with life</li>
+              <li>Liquid water and a suitable atmosphere</li>
+            </ul>
+          </div>
+        </div>
+      );
+    } else if (planet.slug === 'mars') {
+      description = (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-bold text-xl mb-2">Atmosphere and Temperature</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Thin: 95% carbon dioxide, 3% nitrogen, 1.6% argon</li>
+              <li>Average temperature is about -63°C</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Surface and Time</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>The red color is due to iron oxide</li>
+              <li>Largest volcano: Olympus Mons (three times the height of Mount Everest)</li>
+              <li>Day is about 24 hours and 39 minutes, and the year is about 687 days</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Moons, Weather, and Exploration</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Two small moons: Phobos and Deimos</li>
+              <li>Phobos: diameter about 22 km, very close orbit, heading for breakup or fall in the future</li>
+              <li>Deimos: diameter about 12 km, more distant orbit and moving away over time</li>
+              <li>Planetary dust storms and polar ice caps of water and carbon dioxide</li>
+              <li>Rovers and research on traces of ancient life and future habitability</li>
+            </ul>
+          </div>
+        </div>
+      );
+    } else if (planet.slug === 'jupiter') {
+      description = (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-bold text-xl mb-2">Measurements, Composition, and Weather</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>The largest planet in the solar system</li>
+              <li>Mostly hydrogen and helium, with no solid surface</li>
+              <li>Colored clouds and continuous storms</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">The Great Red Spot</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>A giant storm with a radius larger than half of Earth's radius</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Rings, Moons, and Magnetism</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Thin rings</li>
+              <li>Strongest planetary magnetic field</li>
+              <li>Short day of about 10 hours, year is about 12 years</li>
+              <li>Number of moons is 95, most notably</li>
+              <li>Ganymede: The largest moon and has a magnetic field</li>
+            </ul>
+          </div>
+        </div>
+      );
+    } else if (planet.slug === 'saturn') {
+      description = (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-bold text-xl mb-2">Measurements and Composition</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Second largest planet</li>
+              <li>Gas giant with no solid surface</li>
+              <li>Mainly composed of hydrogen</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Rings and Moons</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Huge, thin rings that extend for hundreds of thousands of kilometers</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Most Notable Moons</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Has 140 moons</li>
+              <li>Titan: Dense atmosphere and lakes of methane, it is Saturn's largest moon</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Additional Features</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Density less than water</li>
+              <li>Day is about 10.5 hours, year is about 29.5 years</li>
+              <li>Strong magnetic field and auroras</li>
+            </ul>
+          </div>
+        </div>
+      );
+    } else if (planet.slug === 'uranus') {
+      description = (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-bold text-xl mb-2">Location and Characteristics</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>The seventh planet</li>
+              <li>Ice giant made of water, ammonia, and methane</li>
+              <li>Axial tilt of nearly 98 degrees, so it rotates as if on its side</li>
+              <li>Day is about 17 hours and 14 minutes, year is about 84 years</li>
+              <li>The blue color is due to the presence of methane gas</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Rings</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Not as extensive as Saturn's rings, with about 13 rings</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Moons</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Has 27 moons</li>
+            </ul>
+          </div>
+        </div>
+      );
+    } else if (planet.slug === 'neptune') {
+      description = (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-bold text-xl mb-2">Measurements, Composition, and Weather</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Ice giant with a blue color due to methane</li>
+              <li>Fastest planetary winds, exceeding 2,100 km/h</li>
+              <li>Day is about 16 hours, year is about 165 years</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Phenomena, Rings, and Moons</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>The Great Dark Spot: a storm observed in the late 20th century</li>
+              <li>Faint rings</li>
+              <li>Has 14 moons</li>
+            </ul>
+          </div>
+        </div>
+      );
+    } else if (planet.slug === 'sun') {
+      description = (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-bold text-xl mb-2">A Star at the Heart of Our System</h3>
+            <p>
+              The Sun is the central star of the solar system, a massive ball of hot, glowing gas, primarily composed of hydrogen (about 74%) and helium (about 24%).
+            </p>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Source of Energy and Life</h3>
+            <p>
+              The Sun produces its energy through nuclear fusion in its core, where hydrogen atoms are converted into helium, releasing enormous amounts of energy as light and heat, which is the basis of life on Earth.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Amazing Facts</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>The Sun's diameter is about 1.4 million kilometers, equivalent to 109 times the diameter of Earth.</li>
+              <li>The temperature in its core reaches about 15 million degrees Celsius.</li>
+              <li>It takes sunlight about 8 minutes and 20 seconds to reach Earth.</li>
+            </ul>
+          </div>
+        </div>
+      );
+    } else if (planet.slug === 'milky-way') {
+      description = (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-bold text-xl mb-2">General Definition</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>
+                The Milky Way is the galaxy to which we, planet Earth, and almost all the planets and stars we see in the sky belong.
+              </li>
+              <li>
+                It is a very large system of stars, gas, cosmic dust, and dark matter.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Shape and Size</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Its shape is a Spiral Galaxy with spiral arms.</li>
+              <li>Its diameter ranges between 100,000 - 120,000 light-years.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Components of the Milky Way Galaxy</h3>
+            <p className="font-semibold">1. The Core:</p>
+            <ul className="list-disc list-inside space-y-1 pr-4">
+              <li>
+                At the center of the galaxy, there is a very massive object believed to be a supermassive black hole.
+              </li>
+              <li>Its mass is about 4 million times the mass of the Sun.</li>
+            </ul>
+            <p className="font-semibold mt-2">2. The Spiral Arms:</p>
+            <ul className="list-disc list-inside space-y-1 pr-4">
+              <li>Main Arms: Orion Arm → We are located in it.</li>
+              <li>These arms are filled with new stars being born and bright nebulae.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Number of Stars and Planets</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Estimates say the galaxy has between 100 - 400 billion stars.</li>
+              <li>Recent studies suggest there may be more than 100 billion planets.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Important Phenomena in the Galaxy</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Nebulae: Places of star formation (like the Orion Nebula).</li>
+              <li>Black holes and neutron stars: Resulting from the death of massive stars.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Age and Evolution</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>
+                The age of the Milky Way galaxy is about 13.6 billion years (very close to the age of the universe, which is 13.8 billion years).
+              </li>
+              <li>It is still evolving and merging with small galaxies around it.</li>
+              <li>
+                In the future (in about 4 billion years) it will collide with the Andromeda Galaxy, and they will merge to form a new giant galaxy.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">View from Earth</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>
+                When you look at a clear sky far from light pollution, you will see a bright white band stretching across the sky → this is the Milky Way.
+              </li>
+              <li>The name comes from its appearance, resembling spilled milk or scattered straw.</li>
+            </ul>
+          </div>
+        </div>
+      );
+    } else if (planet.slug === 'black-holes') {
+      description = (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-bold text-xl mb-2">First: What is a Black Hole?</h3>
+            <ul className="list-disc list-inside space-y-2">
+              <li>
+                A black hole is a region in space with such immense gravity that nothing that gets close to it can escape, not even light itself.
+              </li>
+              <li>
+                It is usually formed from the collapse of a very massive star after it exhausts its nuclear fuel → it explodes as a supernova → then collapses on itself to form a black hole.
+              </li>
+              <li>
+                Its most important parts are:
+                <ul className="list-disc list-inside space-y-1 pr-4 mt-1">
+                  <li>
+                    <strong>Event Horizon:</strong> The boundary beyond which nothing can return.
+                  </li>
+                  <li>
+                    <strong>Singularity:</strong> The point of infinite density at the center, where the laws of physics as we know them break down.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">
+              Second: History of Predicting Black Holes
+            </h3>
+            <p className="font-semibold">1. 18th Century:</p>
+            <ul className="list-disc list-inside space-y-1 pr-4">
+              <li>
+                Scientists John Michell and Pierre-Simon Laplace proposed the idea of "dark stars" so massive that their gravity prevents light from escaping.
+              </li>
+            </ul>
+            <p className="font-semibold mt-2">2. General Theory of Relativity (1915):</p>
+            <ul className="list-disc list-inside space-y-1 pr-4">
+              <li>
+                Albert Einstein published his theory, which explained gravity as a curvature in the fabric of spacetime.
+              </li>
+              <li>
+                Immediately after, Karl Schwarzschild provided the first mathematical solution to Einstein's equations describing a "black hole."
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Third: Imaging Black Holes</h3>
+            <p className="font-semibold">1. The First Image in History (2019):</p>
+            <ul className="list-disc list-inside space-y-1 pr-4">
+              <li>
+                The Event Horizon Telescope team announced the first-ever image of a black hole.
+              </li>
+              <li>This black hole is in the M87 galaxy, 55 million light-years away from us.</li>
+              <li>The image showed a "bright ring" around the shadow of the black hole.</li>
+            </ul>
+            <p className="font-semibold mt-2">2. The Second Image (2022):</p>
+            <ul className="list-disc list-inside space-y-1 pr-4">
+              <li>
+                The same team published an image of the black hole at the center of our galaxy, the Milky Way.
+              </li>
+              <li>It was confirmed that its mass is equivalent to about 4 million times the mass of the Sun.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-xl mb-2">Types of Black Holes</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>
+                <strong>Stellar Black Holes:</strong> Result from the death of a massive star. Their mass is 3 to tens of times greater than the Sun's mass.
+              </li>
+              <li>
+                <strong>Supermassive Black Holes:</strong> Found at the centers of galaxies. Their mass is millions or billions of times the mass of the Sun.
+              </li>
+              <li>
+                <strong>Intermediate-Mass Black Holes:</strong> Rare and difficult to detect, their mass falls between the other two types.
+              </li>
+            </ul>
+          </div>
+        </div>
+      );
+    }
   }
 
   if (!description) {
