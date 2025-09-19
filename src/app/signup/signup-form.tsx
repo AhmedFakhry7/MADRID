@@ -11,45 +11,48 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useTranslations } from "next-intl";
 
 export function SignupForm() {
+  const t = useTranslations('SignupForm');
+
   return (
-    <Card className="mx-auto max-w-sm bg-card/70 backdrop-blur-sm border-white/20 text-right">
+    <Card className="mx-auto max-w-sm bg-card/70 backdrop-blur-sm border-white/20">
       <CardHeader>
-        <CardTitle className="text-2xl text-accent">إنشاء حساب</CardTitle>
+        <CardTitle className="text-2xl text-accent">{t('title')}</CardTitle>
         <CardDescription>
-          أدخل معلوماتك لإنشاء حساب جديد
+          {t('description')}
         </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid gap-4">
           <div className="grid gap-2 text-right">
-            <Label htmlFor="full-name">الاسم الكامل</Label>
-            <Input id="full-name" placeholder="الاسم الكامل" required />
+            <Label htmlFor="full-name">{t('fullNameLabel')}</Label>
+            <Input id="full-name" placeholder={t('fullNamePlaceholder')} required />
           </div>
           <div className="grid gap-2 text-right">
-            <Label htmlFor="email">البريد الإلكتروني</Label>
+            <Label htmlFor="email">{t('emailLabel')}</Label>
             <Input
               id="email"
               type="email"
-              placeholder="m@example.com"
+              placeholder={t('emailPlaceholder')}
               required
               dir="ltr"
               className="text-left"
             />
           </div>
           <div className="grid gap-2 text-right">
-            <Label htmlFor="password">كلمة المرور</Label>
+            <Label htmlFor="password">{t('passwordLabel')}</Label>
             <Input id="password" type="password" required dir="ltr" className="text-left"/>
           </div>
           <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-            إنشاء حساب
+            {t('createButton')}
           </Button>
         </div>
         <div className="mt-4 text-center text-sm">
-          لديك حساب بالفعل؟{" "}
+          {t('loginPrompt')}{" "}
           <Link href="/login" className="underline text-accent">
-            تسجيل الدخول
+            {t('loginLink')}
           </Link>
         </div>
       </CardContent>

@@ -49,5 +49,27 @@
     "sun": "الشمس",
     "milky-way": "مجرة درب التبانة",
     "black-holes": "الثقوب السوداء"
+  },
+  "LoginForm": {
+    "title": "تسجيل الدخول",
+    "description": "أدخل بريدك الإلكتروني وكلمة المرور للدخول إلى حسابك",
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "m@example.com",
+    "passwordLabel": "كلمة المرور",
+    "loginButton": "تسجيل الدخول",
+    "signupPrompt": "ليس لديك حساب؟",
+    "signupLink": "إنشاء حساب"
+  },
+  "SignupForm": {
+    "title": "إنشاء حساب",
+    "description": "أدخل معلوماتك لإنشاء حساب جديد",
+    "fullNameLabel": "الاسم الكامل",
+    "fullNamePlaceholder": "الاسم الكامل",
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "m@example.com",
+    "passwordLabel": "كلمة المرور",
+    "createButton": "إنشاء حساب",
+    "loginPrompt": "لديك حساب بالفعل؟",
+    "loginLink": "تسجيل الدخول"
   }
 }

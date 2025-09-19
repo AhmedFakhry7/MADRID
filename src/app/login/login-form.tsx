@@ -11,24 +11,27 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useTranslations } from "next-intl";
 
 export function LoginForm() {
+  const t = useTranslations('LoginForm');
+
   return (
-    <Card className="mx-auto max-w-sm bg-card/70 backdrop-blur-sm border-white/20 text-right">
+    <Card className="mx-auto max-w-sm bg-card/70 backdrop-blur-sm border-white/20">
       <CardHeader>
-        <CardTitle className="text-2xl text-accent">تسجيل الدخول</CardTitle>
+        <CardTitle className="text-2xl text-accent">{t('title')}</CardTitle>
         <CardDescription>
-          أدخل بريدك الإلكتروني وكلمة المرور للدخول إلى حسابك
+          {t('description')}
         </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid gap-4">
           <div className="grid gap-2 text-right">
-            <Label htmlFor="email">البريد الإلكتروني</Label>
+            <Label htmlFor="email">{t('emailLabel')}</Label>
             <Input
               id="email"
               type="email"
-              placeholder="m@example.com"
+              placeholder={t('emailPlaceholder')}
               required
               dir="ltr"
               className="text-left"
@@ -36,18 +39,18 @@ export function LoginForm() {
           </div>
           <div className="grid gap-2 text-right">
             <div className="flex items-center">
-              <Label htmlFor="password">كلمة المرور</Label>
+              <Label htmlFor="password">{t('passwordLabel')}</Label>
             </div>
             <Input id="password" type="password" required dir="ltr" className="text-left"/>
           </div>
           <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-            تسجيل الدخول
+            {t('loginButton')}
           </Button>
         </div>
         <div className="mt-4 text-center text-sm">
-          ليس لديك حساب؟{" "}
+          {t('signupPrompt')}{" "}
           <Link href="/signup" className="underline text-accent">
-            إنشاء حساب
+            {t('signupLink')}
           </Link>
         </div>
       </CardContent>

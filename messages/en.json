@@ -49,5 +49,27 @@
     "sun": "The Sun",
     "milky-way": "Milky Way Galaxy",
     "black-holes": "Black Holes"
+  },
+  "LoginForm": {
+    "title": "Login",
+    "description": "Enter your email below to login to your account",
+    "emailLabel": "Email",
+    "emailPlaceholder": "m@example.com",
+    "passwordLabel": "Password",
+    "loginButton": "Login",
+    "signupPrompt": "Don't have an account?",
+    "signupLink": "Sign up"
+  },
+  "SignupForm": {
+    "title": "Sign Up",
+    "description": "Enter your information to create an account",
+    "fullNameLabel": "Full name",
+    "fullNamePlaceholder": "Full Name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "m@example.com",
+    "passwordLabel": "Password",
+    "createButton": "Create an account",
+    "loginPrompt": "Already have an account?",
+    "loginLink": "Login"
   }
 }
