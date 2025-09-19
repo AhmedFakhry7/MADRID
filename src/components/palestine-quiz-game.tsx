@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Link } from '@/navigation';
 import type { QuizQuestion } from "@/lib/quiz-data";
 import { palestineQuizDataAr } from "@/lib/palestine-quiz-data-ar";
 import { palestineQuizDataEn } from "@/lib/palestine-quiz-data-en";
@@ -9,7 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
-import { ArrowLeft, Home, RefreshCw } from "lucide-react";
+import { ArrowLeft, RefreshCw } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 const TOTAL_QUESTIONS = 2;
@@ -55,18 +54,32 @@ export function PalestineQuizGame() {
         setIsFinished(false);
     };
 
-    if (questions.length === 0) {
+    if (questions.length === 0 && !isFinished) {
         return (
-            <Card className="w-full max-w-xl bg-card/70 backdrop-blur-sm border-white/20">
-                <CardHeader>
-                    <CardTitle className="text-2xl font-semibold text-white pt-6 text-center">
-                        {t('loading')}
-                    </CardTitle>
-                </CardHeader>
-            </Card>
+            <div className="w-full max-w-xl text-center p-8">
+                 <p>{t('loading')}</p>
+            </div>
         );
     }
     
+    if (isFinished) {
+        return (
+            <div className="text-center">
+                <CardTitle className="text-3xl font-bold text-accent">{t('finishedTitle')}</CardTitle>
+                <CardDescription className="text-gray-300 pt-2 text-lg">
+                    {t('finalScore')}
+                </CardDescription>
+                <div className="text-center my-4">
+                    <p className="text-6xl font-bold text-white mb-4">{score} / {questions.length}</p>
+                </div>
+                <Button onClick={startNewGame} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                    <RefreshCw className="ltr:mr-2 rtl:ml-2 h-4 w-4" />
+                    {t('retry')}
+                </Button>
+            </div>
+        );
+    }
+
     const currentQuestion = questions[currentQuestionIndex];
 
     const handleOptionSelect = (option: string) => {
@@ -90,46 +103,17 @@ export function PalestineQuizGame() {
         }
     };
 
-    if (isFinished) {
-        return (
-            <Card className="w-full max-w-md bg-card/70 backdrop-blur-sm border-accent shadow-lg shadow-accent/20">
-                <CardHeader className="text-center">
-                    <CardTitle className="text-3xl font-bold text-accent">{t('finishedTitle')}</CardTitle>
-                    <CardDescription className="text-gray-300 pt-2 text-lg">
-                        {t('finalScore')}
-                    </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                    <p className="text-6xl font-bold text-white mb-4">{score} / {questions.length}</p>
-                </CardContent>
-                <CardFooter className="flex flex-col sm:flex-row gap-4">
-                    <Button onClick={startNewGame} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                        <RefreshCw className="ltr:mr-2 rtl:ml-2 h-4 w-4" />
-                        {t('retry')}
-                    </Button>
-                    <Button asChild variant="outline" className="w-full text-white border-white/30 hover:bg-white/10 hover:text-white">
-                        <Link href="/" className="flex items-center justify-center gap-2">
-                             {t('backToHome')}
-                            <Home className="h-4 w-4" />
-                        </Link>
-                    </Button>
-                </CardFooter>
-            </Card>
-        );
-    }
 
     return (
-        <Card className="w-full max-w-xl bg-card/70 backdrop-blur-sm border-white/20 text-right">
-            <CardHeader>
-                <Progress value={((currentQuestionIndex + 1) / questions.length) * 100} className="w-full h-2 bg-primary" indicatorClassName="bg-accent" />
-                <CardTitle className="text-2xl font-semibold text-white pt-6 ltr:text-left rtl:text-right">
-                    {currentQuestion.question}
-                </CardTitle>
-                <CardDescription className="text-gray-400 ltr:text-left rtl:text-right">
-                    {t('chooseCorrect')}
-                </CardDescription>
-            </CardHeader>
-            <CardContent className="flex flex-col gap-3">
+        <div className="w-full max-w-xl text-right">
+            <Progress value={((currentQuestionIndex + 1) / questions.length) * 100} className="w-full h-2 bg-primary mb-4" indicatorClassName="bg-accent" />
+            <h4 className="text-2xl font-semibold text-white pt-6 ltr:text-left rtl:text-right">
+                {currentQuestion.question}
+            </h4>
+            <p className="text-gray-400 ltr:text-left rtl:text-right mb-4">
+                {t('chooseCorrect')}
+            </p>
+            <div className="flex flex-col gap-3">
                 {currentQuestion.options.map((option, index) => {
                     const isCorrect = option === currentQuestion.correct;
                     const isSelected = selectedOption === option;
@@ -152,20 +136,18 @@ export function PalestineQuizGame() {
                         </Button>
                     );
                 })}
-            </CardContent>
-            <CardFooter className="flex-col items-start gap-4">
-                {isAnswered && (
-                    <div className="w-full ltr:text-left rtl:text-right">
-                        <p className={cn("text-lg", selectedOption === currentQuestion.correct ? "text-green-400" : "text-red-400")}>
-                            {selectedOption === currentQuestion.correct ? t('correctAnswer') : t('wrongAnswer', {correctAnswer: currentQuestion.correct})}
-                        </p>
-                        <Button onClick={handleNextQuestion} className="w-full mt-4 bg-accent text-accent-foreground hover:bg-accent/90">
-                            {currentQuestionIndex < questions.length - 1 ? t('nextQuestion') : t('showResult')}
-                            <ArrowLeft className="ltr:ml-2 rtl:mr-2 h-4 w-4" />
-                        </Button>
-                    </div>
-                )}
-            </CardFooter>
-        </Card>
+            </div>
+            {isAnswered && (
+                <div className="w-full ltr:text-left rtl:text-right mt-4">
+                    <p className={cn("text-lg", selectedOption === currentQuestion.correct ? "text-green-400" : "text-red-400")}>
+                        {selectedOption === currentQuestion.correct ? t('correctAnswer') : t('wrongAnswer', {correctAnswer: currentQuestion.correct})}
+                    </p>
+                    <Button onClick={handleNextQuestion} className="w-full mt-4 bg-accent text-accent-foreground hover:bg-accent/90">
+                        {currentQuestionIndex < questions.length - 1 ? t('nextQuestion') : t('showResult')}
+                        <ArrowLeft className="ltr:ml-2 rtl:mr-2 h-4 w-4" />
+                    </Button>
+                </div>
+            )}
+        </div>
     );
 }

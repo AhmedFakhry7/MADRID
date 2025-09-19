@@ -2,6 +2,7 @@ import { Header } from '@/components/layout/header';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getTranslations } from 'next-intl/server';
 import { PalestineFlagIcon } from '@/components/icons/palestine-flag-icon';
+import { PalestineQuizGame } from '@/components/palestine-quiz-game';
 
 export default async function PalestineAndSpacePage({
   params: { locale },
@@ -94,6 +95,18 @@ export default async function PalestineAndSpacePage({
                 </div>
               </CardContent>
             </Card>
+
+            <Card className="bg-card/50 backdrop-blur-sm border-white/20">
+              <CardHeader>
+                <CardTitle className="text-3xl font-bold text-accent">
+                  {t('palestineQuizTitle')}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex items-center justify-center">
+                <PalestineQuizGame />
+              </CardContent>
+            </Card>
+
           </div>
         </div>
       </main>
