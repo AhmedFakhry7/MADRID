@@ -9,10 +9,10 @@ export default function PlanetsPage() {
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-300 to-purple-400 bg-clip-text text-transparent mb-4">
-              كواكب المجموعة الشمسية
+              استكشاف الكون
             </h1>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-              انطلق في رحلة لاستكشاف عوالم مجموعتنا الشمسية، من الكواكب الصخرية القريبة إلى عمالقة الغاز البعيدة.
+              انطلق في رحلة لاستكشاف عوالم مجموعتنا الشمسية وما بعدها، من الكواكب الصخرية إلى الظواهر الكونية المذهلة.
             </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12">

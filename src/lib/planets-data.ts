@@ -16,4 +16,7 @@ export const planets: Planet[] = [
   { name: 'زحل', slug: 'saturn', image: { id: 'saturn', hint: 'planet saturn' } },
   { name: 'أورانوس', slug: 'uranus', image: { id: 'uranus', hint: 'planet uranus' } },
   { name: 'نبتون', slug: 'neptune', image: { id: 'neptune', hint: 'planet neptune' } },
+  { name: 'الشمس', slug: 'sun', image: { id: 'sun', hint: 'sun star' } },
+  { name: 'مجرة درب التبانة', slug: 'milky-way', image: { id: 'milky-way', hint: 'milky way galaxy' } },
+  { name: 'الثقوب السوداء', slug: 'black-holes', image: { id: 'black-holes', hint: 'black hole' } },
 ];
