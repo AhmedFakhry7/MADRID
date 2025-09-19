@@ -23,6 +23,10 @@ export const pathnames = {
     en: '/palestine-and-space',
     ar: '/palestine-and-space',
   },
+  '/palestine-quiz': {
+    en: '/palestine-quiz',
+    ar: '/palestine-quiz',
+  },
 } satisfies Pathnames<typeof locales>;
 
 export const { Link, redirect, usePathname, useRouter } =
