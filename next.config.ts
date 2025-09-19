@@ -1,10 +1,9 @@
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
 import withNextIntl from 'next-intl/plugin';
 
 const withIntl = withNextIntl('./src/i18n.ts');
 
 const nextConfig: NextConfig = {
-  /* config options here */
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -36,7 +35,13 @@ const nextConfig: NextConfig = {
         hostname: 'firebasestorage.googleapis.com',
         port: '',
         pathname: '/**',
-      }
+      },
+      {
+        protocol: 'https',
+        hostname: 'images-assets.nasa.gov', // ✅ أضفت الدومين الجديد
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

@@ -2,14 +2,14 @@
   "placeholderImages": [
     {
       "id": "mercury",
-      "description": "A placeholder image for the planet Mercury",
-      "imageUrl": "https://picsum.photos/seed/mercury-placeholder/500/500",
+      "description": "NASA image of Mercury",
+      "imageUrl": "https://images-assets.nasa.gov/image/PIA11245/PIA11245~orig.jpg",
       "imageHint": "planet mercury"
     },
     {
       "id": "venus",
-      "description": "A placeholder image for the planet Venus",
-      "imageUrl": "https://picsum.photos/seed/venus-placeholder-2/500/500",
+      "description": "NASA image of Venus",
+      "imageUrl": "https://images-assets.nasa.gov/image/PIA00271/PIA00271~orig.jpg",
       "imageHint": "planet venus"
     },
     {
@@ -21,49 +21,49 @@
     {
       "id": "mars",
       "description": "A local image for the planet Mars",
-      "imageUrl": "/images/mars.jpg",
+      "imageUrl": "https://images-assets.nasa.gov/image/PIA04591/PIA04591~orig.jpg",
       "imageHint": "planet mars"
     },
     {
       "id": "jupiter",
       "description": "A placeholder image for the planet Jupiter",
-      "imageUrl": "https://picsum.photos/seed/jupiter-placeholder/500/500",
+      "imageUrl": "https://images-assets.nasa.gov/image/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~orig.jpg",
       "imageHint": "planet jupiter"
     },
     {
       "id": "saturn",
       "description": "A placeholder image for the planet Saturn",
-      "imageUrl": "https://picsum.photos/seed/saturn-placeholder/500/500",
+      "imageUrl": "https://images-assets.nasa.gov/image/PIA11141/PIA11141~orig.jpg",
       "imageHint": "planet saturn"
     },
     {
       "id": "uranus",
       "description": "A placeholder image for the planet Uranus",
-      "imageUrl": "https://picsum.photos/seed/uranus-placeholder/500/500",
+      "imageUrl": "https://images-assets.nasa.gov/image/PIA18182/PIA18182~orig.jpg",
       "imageHint": "planet uranus"
     },
     {
       "id": "neptune",
       "description": "A placeholder image for the planet Neptune",
-      "imageUrl": "https://picsum.photos/seed/neptune-placeholder/500/500",
+      "imageUrl": "https://images-assets.nasa.gov/image/PIA01492/PIA01492~orig.jpg",
       "imageHint": "planet neptune"
     },
     {
       "id": "sun",
       "description": "A placeholder image for the Sun",
-      "imageUrl": "https://picsum.photos/seed/sun-placeholder/500/500",
+      "imageUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001661/GSFC_20171208_Archive_e001661~orig.jpg",
       "imageHint": "sun star"
     },
     {
       "id": "milky-way",
       "description": "A placeholder image for the Milky Way galaxy",
-      "imageUrl": "https://picsum.photos/seed/milky-way-placeholder/500/500",
+      "imageUrl": "https://images-assets.nasa.gov/image/PIA10748/PIA10748~orig.jpg",
       "imageHint": "milky way galaxy"
     },
     {
       "id": "black-holes",
       "description": "A placeholder image for Black Holes",
-      "imageUrl": "https://picsum.photos/seed/black-holes-placeholder/500/500",
+      "imageUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000984/GSFC_20171208_Archive_e000984~orig.jpg",
       "imageHint": "black hole"
     }
   ]
