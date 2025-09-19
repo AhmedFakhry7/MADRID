@@ -1,30 +1,42 @@
+'use client';
+
 import Link from 'next-intl/link';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/language-switcher';
 
 const SpaceLogo = () => (
-  <svg
+    <svg
     className="w-12 h-12 text-white"
-    viewBox="0 0 100 100"
+    viewBox="0 0 200 200"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path
-      d="M50 10C27.9086 10 10 27.9086 10 50C10 72.0914 27.9086 90 50 90C72.0914 90 90 72.0914 90 50C90 27.9086 72.0914 10 50 10Z"
-      stroke="hsl(var(--accent))"
-      strokeWidth="4"
-    />
-    <path
-      d="M50 20C33.4315 20 20 33.4315 20 50C20 66.5685 33.4315 80 50 80C66.5685 80 80 66.5685 80 50C80 33.4315 66.5685 20 50 20Z"
-      fill="hsl(var(--primary))"
-    />
-    <path
-      d="M37.5 50L45.8333 37.5H54.1667L62.5 50L54.1667 62.5H45.8333L37.5 50Z"
-      stroke="hsl(var(--accent))"
-      strokeWidth="3"
-    />
-    <circle cx="50" cy="50" r="4" fill="white" />
+    <g clipPath="url(#clip0_80_2)">
+      <path
+        d="M100 180C144.183 180 180 144.183 180 100C180 55.8172 144.183 20 100 20C55.8172 20 20 55.8172 20 100C20 144.183 55.8172 180 100 180Z"
+        fill="hsl(var(--primary))"
+      />
+      <path
+        d="M100 190C149.706 190 190 149.706 190 100C190 50.2944 149.706 10 100 10C50.2944 10 10 50.2944 10 100C10 149.706 50.2944 190 100 190Z"
+        stroke="hsl(var(--accent))"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M152.09 110.42C155.3 107.48 156.4 103.13 155.15 99.04C153.9 94.95 150.46 91.83 146.22 90.53C139.38 88.45 131.7 91.1 127.35 96.63L99.9999 129.99L72.6499 96.63C68.2999 91.1 60.6199 88.45 53.7799 90.53C49.5399 91.83 46.0999 94.95 44.8499 99.04C43.5999 103.13 44.6999 107.48 47.9099 110.42L84.2799 142.27C88.4499 146 94.0299 148.11 99.9999 148.11C105.97 148.11 111.55 146 115.72 142.27L152.09 110.42Z"
+        stroke="white"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_80_2">
+        <rect width="200" height="200" fill="white" />
+      </clipPath>
+    </defs>
   </svg>
 );
 

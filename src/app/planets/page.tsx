@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import { Header } from '@/components/layout/header';
 import { planets } from '@/lib/planets-data';

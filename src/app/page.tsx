@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next-intl/link';
 import { useTranslations } from 'next-intl';
 import { Header } from '@/components/layout/header';

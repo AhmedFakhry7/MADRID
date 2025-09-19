@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next-intl/link';
 import Image from 'next/image';
 import type { Planet } from '@/lib/planets-data';
