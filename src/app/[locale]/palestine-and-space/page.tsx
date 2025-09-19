@@ -20,14 +20,14 @@ export default async function PalestineAndSpacePage({
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1 container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-500 via-white to-red-500 bg-clip-text text-transparent mb-4 flex items-center justify-center gap-4">
-            <PalestineFlagIcon className="w-10 h-10 md:w-12 md:h-12" />
-            {t('title')}
-          </h1>
-        </div>
-
         <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-500 via-white to-red-500 bg-clip-text text-transparent mb-4 flex items-center justify-center gap-4">
+              <PalestineFlagIcon className="w-10 h-10 md:w-12 md:h-12" />
+              {t('title')}
+            </h1>
+          </div>
+
           <div className="space-y-12">
             <Card className="bg-card/50 backdrop-blur-sm border-white/20">
               <CardHeader>
@@ -98,6 +98,7 @@ export default async function PalestineAndSpacePage({
               </CardContent>
             </Card>
           </div>
+
           <div className="text-center mt-12">
             <Button
               asChild
