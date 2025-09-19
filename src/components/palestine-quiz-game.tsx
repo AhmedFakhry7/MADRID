@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Link, useRouter } from '@/navigation';
+import { Link } from '@/navigation';
 import type { QuizQuestion } from "@/lib/quiz-data";
 import { palestineQuizDataAr } from "@/lib/palestine-quiz-data-ar";
 import { palestineQuizDataEn } from "@/lib/palestine-quiz-data-en";
