@@ -8,96 +8,37 @@ import { LanguageSwitcher } from '@/components/language-switcher';
 const SpaceLogo = () => (
   <svg
     className="w-12 h-12 text-white"
-    viewBox="0 0 200 200"
+    viewBox="0 0 64 64"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g clipPath="url(#clip0_80_2)">
-      <path
-        d="M100 180C144.183 180 180 144.183 180 100C180 55.8172 144.183 20 100 20C55.8172 20 20 55.8172 20 100C20 144.183 55.8172 180 100 180Z"
-        fill="hsl(var(--primary))"
+    {/* Planet Body */}
+    <circle cx="32" cy="32" r="16" fill="hsl(var(--accent))" />
+    
+    {/* Planet Shadow */}
+    <path d="M32 16C24.268 16 18 23.1797 18 31C18 31.3333 18.0183 31.6667 18.0541 32C19.822 39.431 25.308 45.4111 32 47.5V48C23.1797 48 16 40.8203 16 32C16 23.1797 23.1797 16 32 16Z" fill="hsl(var(--primary) / 0.5)" />
+
+    {/* Planet Ring */}
+    <path
+      d="M12 32 C 12 24, 52 24, 52 32 C 52 40, 12 40, 12 32 Z"
+      stroke="hsl(var(--secondary))"
+      strokeWidth="3"
+      fill="none"
+      transform="rotate(-15 32 32)"
+    />
+
+    {/* Twinkling Star */}
+    <path d="M54 14 L 55 18 L 59 19 L 56 21 L 57 25 L 54 23 L 51 25 L 52 21 L 49 19 L 53 18 Z" fill="white">
+      <animate
+        attributeName="opacity"
+        values="0.5;1;0.5"
+        dur="2s"
+        repeatCount="indefinite"
       />
-      <path
-        d="M100 190C149.706 190 190 149.706 190 100C190 50.2944 149.706 10 100 10C50.2944 10 10 50.2944 10 100C10 149.706 50.2944 190 100 190Z"
-        stroke="hsl(var(--accent))"
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <g transform="translate(25, 25) scale(0.75)">
-        <path
-          d="M100 20C111.046 20 120 28.9543 120 40V60C120 71.0457 111.046 80 100 80C88.9543 80 80 71.0457 80 60V40C80 28.9543 88.9543 20 100 20Z"
-          fill="#E5E7EB"
-          stroke="#9CA3AF"
-          strokeWidth="4"
-        />
-        <rect
-          x="70"
-          y="70"
-          width="60"
-          height="80"
-          rx="15"
-          fill="#F3F4F6"
-          stroke="#9CA3AF"
-          strokeWidth="4"
-        />
-        <rect
-          x="80"
-          y="90"
-          width="40"
-          height="50"
-          rx="5"
-          fill="hsla(var(--accent)/0.3)"
-          stroke="hsl(var(--accent))"
-          strokeWidth="2.5"
-        />
-        <path
-          d="M100 150L100 170"
-          stroke="#9CA3AF"
-          strokeWidth="4"
-          strokeLinecap="round"
-        />
-        <path
-          d="M90 170H110"
-          stroke="#9CA3AF"
-          strokeWidth="4"
-          strokeLinecap="round"
-        />
-        <path
-          d="M60 100L70 100"
-          stroke="#9CA3AF"
-          strokeWidth="4"
-          strokeLinecap="round"
-        />
-        <path
-          d="M130 100L140 100"
-          stroke="#9CA3AF"
-          strokeWidth="4"
-          strokeLinecap="round"
-        />
-        <path
-          d="M70 120L60 130"
-          stroke="#9CA3AF"
-          strokeWidth="4"
-          strokeLinecap="round"
-        />
-        <path
-          d="M130 120L140 130"
-          stroke="#9CA3AF"
-          strokeWidth="4"
-          strokeLinecap="round"
-        />
-        <circle cx="92" cy="105" r="3" fill="white" />
-        <circle cx="108" cy="105" r="3" fill="white" />
-      </g>
-    </g>
-    <defs>
-      <clipPath id="clip0_80_2">
-        <rect width="200" height="200" fill="white" />
-      </clipPath>
-    </defs>
+    </path>
   </svg>
 );
+
 
 export function Header() {
   const t = useTranslations('Header');
