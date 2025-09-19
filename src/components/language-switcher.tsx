@@ -1,7 +1,6 @@
 "use client";
 
-import { usePathname } from 'next-intl/navigation';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from '@/navigation';
 import { useLocale } from 'next-intl';
 import {
   Select,
@@ -18,7 +17,7 @@ export function LanguageSwitcher() {
 
   const handleLocaleChange = (newLocale: string) => {
     // This will cause a full page refresh
-    router.replace(`/${newLocale}${pathname}`);
+    router.replace(pathname, { locale: newLocale });
   };
 
   return (
